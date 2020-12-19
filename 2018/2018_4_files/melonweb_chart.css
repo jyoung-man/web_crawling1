@@ -1,0 +1,1427 @@
+@charset "utf-8";
+
+/*
+* melon / 2013.07.19 / vi-nyl.com
+* Service : 멜론 공통
+* Creation Date : 2013.07.19
+* Last Update :
+* Author : 바이널
+*/
+
+/* Title h3 */
+h3.title {padding-top:17px; padding-bottom:12px; color:#1a1a1a; font-weight:bold; font-size:18px; line-height:24px; font-family:"맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif;}
+
+
+/* Common */
+#conts h2 {margin-top:25px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/h2_title.png) no-repeat 0 0;text-indent: -9999px}
+#conts h2.trend {background-position:0 -157px }
+#conts h2.top100 {background-position:0 -7px }
+#conts h2.chart_find {background-position:0 -125px}
+#conts h2.gnr_style {background-position:0 -66px}
+#conts h2.award {float:left;width:114px;background-position:0 -97px}
+.f_tit {overflow:hidden; zoom:1; margin:25px 0 2px;}
+.f_tit.line {margin-bottom:10px; padding-bottom: 12px; border-bottom: 2px solid #808080;}
+.f_tit .tit_desc {overflow:hidden;float:left;width:597px;margin-left:15px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/h2_title.png) no-repeat 11px -217px;text-indent: -9999px;}
+.f_tit a.btn_detail{display:inline-block;float:right;width:78px; height:22px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_detail.gif) no-repeat; text-indent:-9999px;}/* 140403_수정 aty */
+.f_tit a.btn_detail:hover{background-position:0 -22px;}/* 140403_수정 aty */
+.f_tit a.btn_detail:active{background-position:0 -44px;}/* 140403_수정 aty */
+.gnr_list {border:0;border-bottom:1px solid #b9b9b9}
+.gnr_list ul li a,
+.gnr_list ul li span {overflow:visible;}
+.f_tit .btn.btn_small02.arrow {float:right; margin-top:8px;}
+.f_tit .btn.btn_small02.arrow span {font-weight:normal;}
+#conts .f_tit.chart_time h2 {float:left; width:118px ; background-position: 0 -32px;}
+.f_tit.chart_time p {float:left; width:370px; height:16px; margin-top:12px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/h2_title.png) no-repeat 0 -196px; font-size:0; line-height:0;}
+.wrap_tab03.type06 ul li.last_child.on .link_tab{width:166px;border-right:1px solid #D9D9D9;}/* 140411_추가 aty */
+
+/* 차트상세찾기 상단리스트 */
+.wrap_dtl_chart {position:relative; width:1008px; height:303px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_dtl_chart.png) no-repeat 0 0;}
+.wrap_dtl_chart h3 {position:absolute; top:0; left:0; width:147px; height:25px; padding:7px 0 0 22px; color:#fff; font-weight:bold; font-size:13px; line-height:15px; font-family:"맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif;; letter-spacing:-1px;}
+.wrap_dtl_chart h3 span {padding-left:21px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_icon_chic.png) no-repeat 0 5px;}
+.wrap_dtl_chart .wrap_cnt {}
+.wrap_dtl_chart h4 {position:absolute; left:1px; width:166px; height:31px; font-weight:normal; font-size:12px; line-height:14px;}
+.wrap_dtl_chart h4 a {display:block; height:22px; padding:9px 0 0 43px; color:#e5e5e5; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_chart_left.png) no-repeat 0 0;}
+.wrap_dtl_chart h4 a:focus {text-decoration:underline;}
+.wrap_dtl_chart h4.tab01 {top:32px;}
+.wrap_dtl_chart h4.tab02 {top:63px;}
+.wrap_dtl_chart h4.tab03 {top:94px;}
+.wrap_dtl_chart h4.tab04 {top:125px;}
+.wrap_dtl_chart h4.tab05 {top:156px;}
+.wrap_dtl_chart h4.tab06 {top:187px;}
+.wrap_dtl_chart h4.tab07 {top:218px;}
+.wrap_dtl_chart h4.on {}
+.wrap_dtl_chart h4 a:hover,
+.wrap_dtl_chart h4.on a {color:#93f315; background-position: -166px 0; font-weight:bold; text-decoration:none;}
+.wrap_dtl_chart h4.tab02 a {background-position: 0 -41px;}
+.wrap_dtl_chart h4.tab02 a:hover,
+.wrap_dtl_chart h4.tab02.on a {background-position:-166px -41px}
+.wrap_dtl_chart h4.tab03 a {background-position: 0 -82px;}
+.wrap_dtl_chart h4.tab03 a:hover,
+.wrap_dtl_chart h4.tab03.on a {background-position:-166px -82px}
+.wrap_dtl_chart h4.tab04 a {background-position: 0 -123px;}
+.wrap_dtl_chart h4.tab04 a:hover,
+.wrap_dtl_chart h4.tab04.on a {background-position:-166px -123px}
+.wrap_dtl_chart h4.tab05 a {background-position: 0 -164px;}
+.wrap_dtl_chart h4.tab05 a:hover,
+.wrap_dtl_chart h4.tab05.on a {background-position:-166px -164px}
+.wrap_dtl_chart h4.tab06 a {background-position: 0 -205px;}
+.wrap_dtl_chart h4.tab06 a:hover,
+.wrap_dtl_chart h4.tab06.on a {background-position:-166px -205px}
+.wrap_dtl_chart h4.tab07 a {background-position: 0 -246px;}
+.wrap_dtl_chart h4.tab07 a:hover,
+.wrap_dtl_chart h4.tab07.on a {background-position:-166px -246px}
+
+.wrap_dtl_chart .wrap_chart {position:relative; overflow:hidden; width:839px; height:300px; margin-left:168px;}
+.wrap_dtl_chart .box_chic {float:left; width:158px;}
+.wrap_dtl_chart .box_chic.nth1 {width:159px;}
+.wrap_dtl_chart .box_chic.nth2 {}
+.wrap_dtl_chart .box_chic.nth3 {}
+.wrap_dtl_chart .box_chic.nth4 {width:150px;}
+.wrap_dtl_chart .box_chic.last {width:214px;}
+.wrap_dtl_chart .box_chic.view h5 span {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_icon_chic.png) no-repeat 0 5px;}
+
+.wrap_dtl_chart .box_chic h5 {height:25px; padding:7px 0 0 24px; color:#b3b3b3; font-weight:bold; font-size:13px; line-height:15px; font-family:"맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif;; letter-spacing:-1px;}
+.wrap_dtl_chart .box_chic h5 span {padding-left:20px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_icon_chic_01.png) no-repeat 0 5px; color:#9b9b9c; letter-spacing:-1px;}
+.wrap_dtl_chart .box_chic.view h5 span {color:#333333;}
+.wrap_dtl_chart .box_chic .list_value {display:none; height:270px; padding:0 1px 0 0; overflow:auto;}
+.wrap_dtl_chart .box_chic .list_value {*position:relative; }/* ie7 */
+.wrap_dtl_chart .box_chic .list_value li {position:relative; overflow:hidden; height:31px; color:#666;}
+.wrap_dtl_chart .box_chic .list_value li.mhover {background-color:#dddee2;}
+.wrap_dtl_chart .box_chic .list_value li.on {background-color:#82b910; color:#fff; font-weight:bold;}
+.wrap_dtl_chart .box_chic .list_bass li input.input_radio,
+.wrap_dtl_chart .box_chic .list_value li input.input_radio {position:absolute; left:-300px; width:0; height:0;}
+.wrap_dtl_chart .box_chic .list_value li label {display:block; height:23px; padding:8px 0 0 43px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_checkbox_d.png) no-repeat 24px 8px; font-size:12px; line-height:15px; cursor: pointer;}
+.wrap_dtl_chart .box_chic .list_value li.on label {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_checkbox_o.png) no-repeat 24px 8px;}
+.wrap_dtl_chart .box_chic .list_bass {height:270px; margin-right:1px; background-color:#d7dbe1; color:#ccc;}
+.wrap_dtl_chart .box_chic .list_bass li {overflow:hidden; height:22px; padding:8px 0 0 43px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_checkbox_no.png) no-repeat 24px 8px; color:#b1b9c1; font-size:12px; line-height:15px;}
+/*.wrap_dtl_chart .box_chic.last {width:207px;}*/
+/*.wrap_dtl_chart .box_chic.last .list_value {width:206px;}*/
+.wrap_dtl_chart .box_chic.last .list_bass {width:214px;}
+.wrap_dtl_chart .box_chic.view .list_value {display:block; margin-right:1px}
+.wrap_dtl_chart .box_chic.view .list_value ul {position:relative; margin-right:-1px;}
+.wrap_dtl_chart .box_chic.view .list_bass {display:none;}
+.wrap_dtl_chart .box_chic.view h5 {color:#333;}
+.wrap_dtl_chart .box_chic.on h5 {color:#333;}
+.wrap_dtl_chart .box_chic.on h5 span {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_icon_chic.png) no-repeat 0 5px;}
+.wrap_btn_serch {padding:15px 6px 16px 0; border-bottom:1px solid #d9d9d9; text-align:center;}
+.wrap_btn_serch .btn_base {height:26px; margin:0;}
+.wrap_btn_serch .btn_base span.even_span {min-width:32px;}
+
+.wrap_serch_value .serch_cnt {position:relative; height:25px; padding:27px 0 10px;}
+.wrap_serch_value .serch_cnt .datelk {color:#1a1a1a; font-size:20px; line-height: 22px; font-family:"Arial","돋움",dotum, "Apple Gothic", sans-serif;; vertical-align:-2px;}
+.wrap_serch_value .serch_cnt .year {color:#1a1a1a; font-weight:bold; font-size:18px; line-height:22px; font-family:"맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif;; letter-spacing:-1px;}
+.wrap_serch_value .serch_cnt .serch_info {padding-left:8px; color:#1a1a1a; font-weight:bold; font-size:18px; line-height:22px; font-family:"맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif;; letter-spacing:-1px;}
+.wrap_serch_value .serch_cnt .serch_info strong {padding-right:8px; color:#8ca456;}
+.wrap_serch_value .serch_cnt .btn_text {margin-left:14px;}
+.wrap_serch_value .serch_cnt .btn.btn_small02.arrow {position:absolute; top:27px; right:0;}
+
+/* 실시간 차트 타임라인 */
+.wrap_hourly {position:relative; height:28px; padding:4px 0 0 35px; background-color:#7fb84b;}
+.wrap_hourly .btn_move_arr.left {position:absolute; top:9px; left:17px;}
+.wrap_hourly .btn_move_arr.right {position:absolute; top:9px; right:17px;}
+.wrap_hourly .wrap_time {position:relative; width:936px; height:28px; overflow:hidden;}
+.wrap_hourly .wrap_time ul {position:absolute; top:0; left:0;}
+.wrap_hourly .wrap_time ul li {float:left; width:72px; text-align:center; color:#333; font-size:14px; line-height:16px; font-family:Arial, "Apple Gothic", sans-serif;}
+.wrap_hourly .wrap_time ul li a {display:inline-block; width:65px; height:24px; padding-top:4px; color:#1f4001; font-weight:bold;}
+.wrap_hourly .wrap_time ul li span {display:inline-block; width:65px; height:24px; padding-top:4px; color:#547d2d; font-weight:bold;}
+.wrap_hourly .wrap_time ul li.on span {height:22px; padding-top:6px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_chic_time.png) no-repeat 0 0; color:#547d2d; font-weight:bold; font-size:16px; text-decoration:none;}
+
+/* 실시간 급상승 TOP100 */
+
+/* 140507_수정 aty  실시간차트 */
+.wrap_top3 {position:relative;height:319px; width:1004px; margin:-2px 0 31px; *margin-top:2px; border:1px solid #404b60;}
+.wrap_top3 .real_graph{position:relative;width:100%;}
+.wrap_top3 .graph_wrap{float:left;width:647px; height:320px; position:relative; z-index:1; background:url('//cdnimg.melon.co.kr/resource/image/web/chart/bg_realtimechart.png') no-repeat 0 0;}
+.wrap_top3 .five_wrap {position: relative; z-index: 5;}/* 140625_추가 */
+.wrap_top3 .five_wrap .graph_wrap { background:url('//cdnimg.melon.co.kr/resource/image/web/chart/bg_fivechart.png') no-repeat 0 0; overflow:visible;} /* 5분차트 관련 수정 */
+.wrap_top3 .graph_wrap .graph_rank{height:277px;}
+
+/* baloon default */
+.wrap_top3 .graph_wrap .dataLabel_wrap { position:absolute; width:100px; height:0; top:7px; left: -50px; text-align:center;}
+.wrap_top3 .graph_wrap .time_layer { position:absolute; left:50%; margin-left:-11px; display:inline-block; width:22px; height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_balloon.png) no-repeat 0 0; cursor:pointer; font-size:0;line-height:0; z-index:0; text-align:center; vertical-align:middle;}
+.wrap_top3 .graph_wrap .time_layer .icon {display:none;}
+/* rank top d_7 */
+.wrap_top3 .graph_wrap .dataLabel_wrap.d_7 { top:-12px; left:-48px;}
+
+/* line active */
+.wrap_top3 .graph_wrap .mhover .time_layer {height:25px;background-position:0 -23px;}
+
+/* marker active */
+.wrap_top3 .graph_wrap .mhover .time_layer.mactive {background:none;width:auto;height:auto; margin-left:-32px; margin-top:-13px; }
+.wrap_top3 .graph_wrap .mhover .time_layer.mactive .icon{ display:inline-block; }
+
+
+.wrap_top3 .graph_wrap .occupancy_cont{position:relative; z-index:2; height:41px; padding-top:1px;}
+.wrap_top3 .graph_wrap .rank_bg{height:7px;width:703px;font-size:0;line-height:0;}
+.wrap_top3 .graph_wrap .rank_bg span{height:7px;float:left;font-size:0;line-height:0;cursor:pointer;}
+.wrap_top3 .graph_wrap .rank_bg .lank01{background:#94f315;}
+.wrap_top3 .graph_wrap .rank_bg .lank02{background:#febf01;}
+.wrap_top3 .graph_wrap .rank_bg .lank03{background:#39c5c2;}
+.wrap_top3 .graph_wrap .rank_time {margin:9px 0 0 162px;}
+.wrap_top3 .five_wrap .graph_wrap .rank_time {margin:8px 0 0 128px;}
+.wrap_top3 .graph_wrap .rank_time .time{float:left;margin-top:5px;font-size:12px;font-weight:bold;}
+.wrap_top3 .graph_wrap .rank_time .time em{color:#ffffff;font-weight:normal;vertical-align:1px;}
+.wrap_top3 .graph_wrap .rank_time ul{overflow:hidden;float:left;margin:0 0 0 15px;}
+.wrap_top3 .graph_wrap .rank_time ul li{overflow:hidden;float:left; font-size:0;line-height:0;}
+.wrap_top3 .graph_wrap .rank_time ul li a{display:block;text-decoration:none; cursor:pointer;}
+.wrap_top3 .graph_wrap .rank_time ul li a em{display:inline-block; width:69px; padding:3px 10px 0 0; font-size:13px;line-height:19px;font-family:Arial;font-weight:bold;v ertical-align:middle;  text-align:right;}
+.wrap_top3 .graph_wrap .rank_time ul li.lank01{width:80px; height:25px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_rank01.png) no-repeat left top;color:#94f315;}
+.wrap_top3 .graph_wrap .rank_time ul li.lank01.on{background-position:0 -25px;}
+.wrap_top3 .graph_wrap .rank_time ul li.lank01 em{color:#b5f832;line-height:20px;}
+.wrap_top3 .graph_wrap .rank_time ul li.lank02{width:79px; height:25px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_rank02.png) no-repeat left top;}
+.wrap_top3 .graph_wrap .rank_time ul li.lank02.on{background-position:0 -25px;}
+.wrap_top3 .graph_wrap .rank_time ul li.lank02 em{color:#ff9752;}
+.wrap_top3 .graph_wrap .rank_time ul li.lank03{width:80px; height:25px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_rank03.png) no-repeat left top;color:#39c5c2;}
+.wrap_top3 .graph_wrap .rank_time ul li.lank03.on{background-position:0 -25px;}
+.wrap_top3 .graph_wrap .rank_time ul li.lank03 em{color:#5ccfff;}
+.wrap_top3 .five_graph{float:left;display:none;}
+
+.wrap_top3 .five_wrap .five_graph {display:block;width:320px;height:319px;}
+.wrap_top3 .five_wrap .five_graph ol li {position:relative;display:none;}
+.wrap_top3 .five_wrap .five_graph ol li.on {display:block;}
+.wrap_top3 .five_wrap .five_graph ol li.on .album_img{overflow:hidden;width:320px;height:320px;z-index:1; }/* 140609_수정  */
+.wrap_top3 .five_wrap .five_graph ol li.on .album_img img {width:320px; height:320px;}
+.wrap_top3 .five_wrap .five_graph ol li.on .rank_music{position:absolute;left:0;top:0;width:262px;height:320px;padding:0 29px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_bg_album.png) repeat;z-index:80;}
+
+/* .wrap_top3 .five_wrap .five_graph ol li.on .rank_music .rank_01{display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat 0 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.on .rank_music .rank_02{display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -50px 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.on .rank_music .rank_03{display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -100px 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.on .rank_music .rank_01.type2{display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -150px 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.on .rank_music .rank_02.type2{display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -200px 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.on .rank_music .rank_03.type2{display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -250px 0;font-size:0;line-height:0;vertical-align:top;} */
+
+/* 140512_추가 aty*/
+.wrap_top3 .five_wrap .five_graph ol li.forecast1 .rank_music .rank_01 {display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -151px 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.forecast1 .rank_music .rank_02 {display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -201px 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.forecast1 .rank_music .rank_03 {display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -250px 0;font-size:0;line-height:0;vertical-align:top;}
+
+.wrap_top3 .five_wrap .five_graph ol li.forecast2 .rank_music .rank_01 {display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -307px 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.forecast2 .rank_music .rank_02 {display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -356px 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.forecast2 .rank_music .rank_03 {display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -406px 0;font-size:0;line-height:0;vertical-align:top;}
+
+.wrap_top3 .five_wrap .five_graph ol li.forecast3 .rank_music .rank_01 {display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -463px 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.forecast3 .rank_music .rank_02 {display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -511px 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.forecast3 .rank_music .rank_03 {display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -558px 0;font-size:0;line-height:0;vertical-align:top;}
+
+.wrap_top3 .five_wrap .five_graph ol li.forecast4 .rank_music .rank_01 {display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -1px 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.forecast5 .rank_music .rank_02 {display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -51px 0;font-size:0;line-height:0;vertical-align:top;}
+.wrap_top3 .five_wrap .five_graph ol li.forecast6 .rank_music .rank_03 {display:block;width:44px;height:65px;margin-top:-2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num03.png) no-repeat -101px 0;font-size:0;line-height:0;vertical-align:top;}
+
+
+
+.wrap_top3 .five_wrap .five_graph .time_five {position:absolute; top:63px; right:29px; width:262px; height:69px; z-index:90;}
+.wrap_top3 .five_wrap .five_graph .txt_five {width:139px;height:15px;margin-top:15px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_time.png) no-repeat 0 1px; *background-position:0 2px;}
+.wrap_top3 .five_wrap .five_graph .txt_five em{display:block;padding-left:51px;color:#85e100;font-family:Arial;font-size:15px;line-height:15px;font-weight:bold;vertical-align:middle;}
+.wrap_top3 .five_wrap .five_graph .real_time{margin-top:7px;padding-bottom:13px;border-bottom:1px solid #8D8C8F;font-family:Arial,"Apple Gothic", sans-serif;font-weight:bold;font-size:30px;line-height:33px;color:#fff;}/* 140425_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .wrap_song_info {margin:114px 0 0 4px;}
+.wrap_top3 .five_wrap .five_graph ol li.on .wrap_song_info .icon_song.new{display:block;width:34px;height:17px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/icon_new02.png) no-repeat 0 0;font-size:0;line-height:0;}
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .wrap_song_info {max-width:261px;font-size:14px;}
+.wrap_top3 .five_wrap .five_graph ol li.on .rank_music .wrap_song_info .play{display:inline-block;width:23px;height:23px;margin-left:4px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_play.png) no-repeat 0 0;font-size:0;line-height:0;vertical-align:top;}/* 140625_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .rank_music .wrap_song_info .play.mhover{background-position:0 -23px;}/* 140609_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .rank_music .wrap_song_info .play.mactive{background-position:0 -46px;}/* 140609_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .rank_music .wrap_song_info .play .odd_span{font-size:0;line-height:0;text-indent:-9999px;}
+.wrap_top3 .five_wrap .five_graph ol li.on .rank_music .btn_play.dim{display:none;}
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .wrap_song_info span strong{display:inline-block;max-width:260px;margin-top:10px;}/* 140425_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .wrap_song_info span strong a.btn_play_song{overflow:hidden;display:inline-block; height:auto; font-size:18px;line-height:20px;letter-spacing:-1px;font-weight:bold;color:#ffffff; white-space:nowrap; text-overflow:ellipsis; word-wrap:normal; text-decoration:none; }/* 140605_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .wrap_song_info span strong a .play{display:inline-block;width:17px;height:17px; *margin-top:6px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_play.png) no-repeat 0 0;font-size:0;line-height:0;vertical-align:bottom; *vertical-align:-1px;}/* 140625_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .wrap_song_info span strong a:hover .play {background-position:0 -30px;}/* 140609_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .wrap_song_info span strong a.btn_play_song.mactive .play {background-position:0 -60px;}/* 140609_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .wrap_song_info span strong span{overflow:hidden;display:inline-block;max-width:220px;font-size:20px;line-height:23px;letter-spacing:-1px;font-weight:bold;color:#fff; white-space:nowrap; text-overflow:ellipsis; word-wrap:normal;}/* 140425_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .wrap_song_info span strong span.tit{*display:inline;font-family:"맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif;line-height:25px;*line-height:28px;vertical-align:middle;*vertical-align:top;cursor:pointer;}/* 140425_수정 aty, 141103 update */
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .wrap_atist {max-width:260px;overflow:hidden; margin:1px 0 0 4px; *margin-top:4px; white-space:nowrap; text-overflow:ellipsis; word-wrap:normal;letter-spacing:-1px; font-size:12px;line-height:14px;color:#999999;}/* 140625_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .wrap_atist a{color:#bbbbbb;font-family:"맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif;font-size:14px;line-height:16px;}/* 140512_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .btn_like {width:100%;margin-top:13px;padding:0 0 0 4px;}
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .btn_like .btn_icon .odd_span{width:11px;height:9px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_like.png) no-repeat 0 0;}
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .btn_like .btn_icon.mhover .odd_span{background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_like.png) no-repeat 0 -9px;}
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .btn_like .btn_icon.mactive .odd_span{background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_like.png) no-repeat 0 -18px;}
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .btn_like .btn_icon span.cnt {color:#c2c2c2;font-family:arial; font-size:14px; line-height:16px;}
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .btn_like .btn_icon.on .odd_span{background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_like.png) no-repeat 0 -27px;}/* 140416_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .btn_like .btn_icon.on.mhover .odd_span{background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_like.png) no-repeat 0 -36px;}/* 140416_수정 aty */
+.wrap_top3 .five_wrap .five_graph ol li.on .music_info .btn_like .btn_icon.on.mactive.mhover .odd_span{background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_like.png) no-repeat 0 -45px;}/* 140416_수정 aty */
+.wrap_top3 .five_graph .wrap{height:283px;}
+.wrap_top3 .five_graph .fivex_txt{height:32px;width:244px;background:#191b1b;padding:18px 0 0 19px;font-size:0;line-height:0;}
+
+/* 5분버튼 */
+
+.wrap_top3 .graph_bar {position:relative; float:left; width:37px; height:319px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_rank_graph.png) no-repeat 0 0;cursor:pointer;font-size:0;line-height:0; z-index:0;}
+.wrap_top3 .graph_bar.disabled { cursor:default;}
+.wrap_top3 .graph_bar.mhover{background-position:-39px 0;}
+.wrap_top3 .graph_bar.mactive{width:37px;right:0;background-position:-78px 0;}
+.wrap_top3 .graph_bar.mactive.mhover{width:37px;right:0;background-position:-39px 0;}
+.wrap_top3 .five_wrap .graph_bar {background-position:-117px 0;}
+.wrap_top3 .five_wrap .graph_bar.mhover {background-position:-156px 0;}
+.wrap_top3 .five_wrap .graph_bar.mactive {background-position:-194px 0;}
+.wrap_top3 .graph_wrap .rank_txt{position:absolute;left:-27px;top:85px;display:block;width:56px; height:53px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_forecast02.png) no-repeat; font-size:0; line-height:0; z-index:99;} /* 140626_수정 aty */
+
+/* 140327_script관련 css 추가 */
+.wrap_top3 #d_chart_box .highcharts-tooltip { z-index:80;}/* 140509_추가 */
+.wrap_top3 #d_chart_box .highcharts-tooltip span {font-family:"돋움",Dotum;}/* 140512_추가 aty */
+.wrap_top3 #d_chart_box { position:relative; z-index:1; height:290px; top:-10px;} /* 140519_그래프 영역 변경 */
+.wrap_top3 #d_chart_box2 { position:relative; z-index:1; margin-top:-5px;*margin-top:-10px;} /* 140523_5분차트관련 수정, 141103_update */
+.wrap_top3 .real_wrap .d_xlabel { display:inline-block; width:20px; height:18px; padding:3px 2px 1px 0; text-align:center; line-height:1.5; overflow:hidden; vertical-align:top; letter-spacing:-1px; font-family:arial; font-size:11px; }/* 140512_수정 aty */
+.wrap_top3 .real_wrap .d_xlabel.on { background:url('//cdnimg.melon.co.kr/resource/image/web/chart/bg_xlabel_last.png') no-repeat 0 0; color:#fff;}
+.wrap_top3 .five_wrap .d_xlabel { display:inline-block; width:32px; height:18px; padding:3px 0 1px 0; text-align:center; line-height:1.5; overflow:hidden; vertical-align:top; font-family:arial; font-size:11px; }/* 140512_수정 aty */
+.wrap_top3 .five_wrap .d_xlabel.on { background:url('//cdnimg.melon.co.kr/resource/image/web/chart/bg_xlabel_last2.png') no-repeat 0 0; color:#fff;}
+svg { position:relative; z-index:1;}
+
+/* 140512_수정 aty */
+
+.wrap_top3 .graph_wrap a.d_icon_rank {display:none; width:37px; height:23px; overflow:hidden; background:url('//cdnimg.melon.co.kr/resource/image/web/chart/icon_chart_rank.png') no-repeat 0 0; text-indent:-99px; z-index:0; cursor: default;}  /* 140804_수정 */
+.wrap_top3 .graph_wrap a.d_icon_rank.mhover{display:inline-block;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank1 {background-position:-342px 0;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank1.mhover{background-position:-342px 0;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank2 {background-position:-342px -29px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank2.mhover{background-position:-342px -29px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank3 {background-position:-342px -59px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank3.mhover{background-position:-342px -59px;}
+
+/* .wrap_top3 .graph_wrap a.d_icon_rank.d_new1 {background-position:-293px -25px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new1.mhover{background-position:-293px -25px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new2 {background-position:-293px -93px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new2.mhover{background-position:0 -93px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new3 {background-position:-293px -160px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new3.mhover{background-position:-293px -160px;} */
+
+/* 140512_추가 aty */
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new1 {width:56px; height:22px; background-position:-228px 0;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new2 {width:56px; height:22px; background-position:-228px -29px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new3 {width:56px; height:22px; background-position:-228px -59px;}
+
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank1.forecast1 {width:56px; height:22px; background-position:0 0;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank1.forecast2 {width:56px; height:22px; background-position:0 -29px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank1.forecast3 {width:56px; height:22px; background-position:0 -59px;}
+
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank2.forecast1 {width:56px; height:22px; background-position:-75px 0;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank2.forecast2 {width:56px; height:22px; background-position:-75px -29px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank2.forecast3 {width:56px; height:22px; background-position:-75px -59px;}
+
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank3.forecast1 {width:56px; height:22px; background-position:-150px 0;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank3.forecast2 {width:56px; height:22px; background-position:-150px -29px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank3.forecast3 {width:56px; height:22px; background-position:-150px -59px;}
+
+/* .wrap_top3 .graph_wrap a.d_icon_rank.d_new1.forecast1 {width:56px; height:22px; background-position:-151px 0;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new2.forecast1 {width:56px; height:22px; background-position:-151px -29px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new3.forecast1 {width:56px; height:22px; background-position:-151px -59px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new1.forecast2 {width:56px; height:22px; background-position:-151px 0;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new2.forecast2 {width:56px; height:22px; background-position:-151px -29px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new3.forecast2 {width:56px; height:22px; background-position:-151px -59px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new1.forecast3 {width:56px; height:22px; background-position:-151px 0;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new2.forecast3 {width:56px; height:22px; background-position:-151px -29px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_new3.forecast3 {width:56px; height:22px; background-position:-151px -59px;}  */
+
+/* .wrap_top3 .graph_wrap a.d_icon_rank.d_rank1.forecast4 {width:56px; height:22px; background-position:0 0;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank2.forecast4 {width:56px; height:22px; background-position:0 -29px;}
+.wrap_top3 .graph_wrap a.d_icon_rank.d_rank3.forecast4 {width:56px; height:22px; background-position:0 -59px;}  */
+
+/* 지붕킥 말풍선 */
+.highcharts-xaxis-labels { z-index:1;}
+.wrap_top3 .rank_cont {position:absolute;right:0;top:0;width:320px;}
+
+.wrap_top3 .rank_cont ol li .rank_music{position:relative;position:absolute;left:0;top:0;height:320px;width:260px;padding:0 30px 0 30px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_bg_album.png) repeat;z-index:80;}/* 140609_수정  */
+.wrap_top3 .rank_cont ol li .rank_music .btn_play{position:absolute;right:0;top:9px;}
+.wrap_top3 .rank_cont ol li .album_img {overflow:hidden; width:320px; height:320px;}/* 140609_수정  */
+.wrap_top3 .rank_cont ol li .album_img img {width:320px; height:320px;}
+.wrap_top3 .rank_cont ol li{display:none;font-size:0;line-height:0;width:320px;}/* 140513_수정 aty */
+.wrap_top3 .rank_cont ol li.on{display:block;position:relative;}
+.wrap_top3 .rank_cont ol li.on a.btn_hearing{position:absolute;right:0;bottom:22px; *bottom:0;overflow:hidden;display:block;width:109px;height:16px; z-index:90;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li.on a.btn_hearing:hover img{display:block;margin-top:-27px;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol.time_click li a.btn_hearing{display:none;}
+.wrap_top3 .rank_cont ol li.on .music_info{position:relative;height:296px; width:260px;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .chart_num{margin-top:25px;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .chart_num .rank_01{display:inline-block;width:34px;height:21px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num.png) no-repeat 0 0;font-size:0;line-height:0;vertical-align:top;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .chart_num .rank_02{display:inline-block;width:35px;height:21px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num.png) no-repeat -74px 0;font-size:0;line-height:0;vertical-align:top;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .chart_num .rank_03{display:inline-block;width:35px;height:21px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num.png) no-repeat -145px 0;font-size:0;line-height:0;vertical-align:top;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .hearing_layer .rank_01{display:inline-block;margin-top:16px;width:17px;height:35px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num02.png) no-repeat -4px -8px;font-size:0;line-height:0;}
+.wrap_top3 .rank_cont ol li .hearing_layer .rank_02{display:inline-block;margin-top:15px;width:26px;height:36px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num02.png) no-repeat -32px -7px;font-size:0;line-height:0;}
+.wrap_top3 .rank_cont ol li .hearing_layer .rank_03{display:inline-block;margin-top:14px;width:26px;height:37px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/rank_num02.png) no-repeat -67px -7px;font-size:0;line-height:0;}
+.wrap_top3 .rank_cont ol li .chart_num .icon_up{width:14px;height:14px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_sprite_rank.png) no-repeat 0 0;}
+.wrap_top3 .rank_cont ol li .chart_num .icon_down{width:14px;height:14px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_sprite_rank.png) no-repeat -19px 0;}
+.wrap_top3 .rank_cont ol li .chart_num .icon_static{width:14px;height:4px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_sprite_rank.png) no-repeat -45px -4px;}
+.wrap_top3 .rank_cont ol li .music_info .chart_num .wrap_rank span{font-size:16px;}
+.wrap_top3 .rank_cont ol li .music_info .wrap_rank{margin:0 0 24px 13px;vertical-align:bottom;}
+.wrap_top3 .rank_cont ol li .music_info .wrap_rank span{font-size:14px; font-family:"Arial", "Apple Gothic", sans-serif;font-weight:bold;}
+.wrap_top3 .rank_cont ol li .music_info .wrap_rank .icon_down,
+.wrap_top3 .rank_cont ol li .music_info .wrap_rank .icon_rank_new,
+.wrap_top3 .rank_cont ol li .music_info .wrap_rank .icon_static,
+.wrap_top3 .rank_cont ol li .music_info .wrap_rank .icon_up{font-size:0 !important;line-height:0;}
+
+.wrap_top3 .rank_cont ol li .music_info .song_info_cont {height:98px; margin-top:16px; border-bottom:1px solid #696867;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .song_info_cont .thumb {float:left; width:80px; height:80px; font-size:0; line-height:0;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .song_info_cont .thumb img {width:80px; height:80px;}
+.wrap_top3 .rank_cont ol li .music_info .song_info_cont .song_info_cont2 {float:right; width:169px;}/* 140609_수정 aty */
+
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info {max-width:160px; font-size:14px; white-space:nowrap; text-overflow:ellipsis; word-wrap:normal;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .rank_music .wrap_song_info .play{display:inline-block;width:17px;height:17px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_play.png) no-repeat 0 0;text-indent: -9999em; vertical-align:middle;}/* 160905 */
+.wrap_top3 .rank_cont ol li .rank_music .wrap_song_info .play.mhover{background-position:0 -30px;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .rank_music .wrap_song_info .play.mactive{background-position:0 -60px;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .rank_music .wrap_song_info .play .odd_span{font-size:0;line-height:0;text-indent:-9999px;}
+.wrap_top3 .rank_cont ol li .rank_music .btn_play.dim{display:none;}
+/* 140519_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info .icon_song{display:inline-block;*display:inline;margin:3px 0 0 0; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/icon_sprite_songlist02.png) no-repeat 0 0; vertical-align:middle;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info .icon_song.age_19{width:13px;height:13px;background-position:0 0;text-indent: -9999em;}/* 160905 */
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info .icon_song.hold{width:13px;height:13px;background-position:-16px 0;text-indent: -9999em;}/* 160905 */
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info .icon_song.free{background-position:-32px 0;text-indent: -9999em;}/* 160905 */
+
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info strong{display:inline-block;}
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info strong a.btn_play_song{display:inline-block; max-width:169px; height:auto; font-size:14px;line-height:16px;letter-spacing:-1px;font-weight:bold;color:#ffffff; white-space:nowrap; text-overflow:ellipsis; word-wrap:normal; } /* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info strong a:hover {text-decoration:none;}
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info strong a:hover .play{display:inline-block;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_play.png) no-repeat 0 -30px;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info strong a.btn_play_song.mactive .play{display:inline-block;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_play.png) no-repeat 0 -60px;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info strong .ellipsis {display: inline-block; max-width: 169px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: auto; word-wrap: normal; vertical-align:middle;}
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info strong span{overflow:hidden;display:inline;font-size:18px;line-height:22px;letter-spacing:-1px;font-weight:bold;color:#fff;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .wrap_song_info strong span.tit{*display:inline; font-family:"맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif;cursor:pointer;}/* 140609_수정 aty */
+/* //140519_수정 aty */
+
+.wrap_top3 .rank_cont ol li .music_info .wrap_atist {max-width:169px;overflow:hidden; margin-top:1px; *margin-top:4px; white-space:nowrap; text-overflow:ellipsis; word-wrap:normal;letter-spacing:-1px; font-size:12px;line-height:14px;color:#999999;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .wrap_atist a{color:#bbbbbb; font-family:"맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif;font-size:13px;line-height:16px;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .btn_like {width:256px;margin-top:12px;padding:0 0 0 2px;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .btn_like .btn_icon .odd_span{width:11px;height:9px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_like.png) no-repeat 0 0;}
+.wrap_top3 .rank_cont ol li .music_info .btn_like .btn_icon.mhover .odd_span{background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_like.png) no-repeat 0 -9px;}
+.wrap_top3 .rank_cont ol li .music_info .btn_like .btn_icon.mactive .odd_span{background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_like.png) no-repeat 0 -18px;}/* 140331_추가 aty */
+.wrap_top3 .rank_cont ol li .music_info .btn_like .btn_icon span.cnt {color:#c2c2c2; font-family:arial; font-size:14px; line-height:16px;}/* 140425_수정 aty */
+
+.wrap_top3 .rank_cont ol li .music_info .btn_like .btn_icon.on .odd_span{background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_like.png) no-repeat 0 -27px;}/* 140401_추가 aty */
+.wrap_top3 .rank_cont ol li .music_info .btn_like .btn_icon.on.mhover .odd_span{background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_like.png) no-repeat 0 -36px;}/* 140401_추가 aty */
+.wrap_top3 .rank_cont ol li .music_info .btn_like .btn_icon.on.mactive.mhover .odd_span{background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_like.png) no-repeat 0 -45px;}/* 140401_추가 aty */
+
+.wrap_top3 .rank_cont ol li .music_info .info_btm ul{overflow:hidden; padding-top:13px;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .info_btm ul li {display:block;margin-top:8px;font-size:12px;line-height:14px;color:#dddddd;font-weight:bold;vertical-align:middle;}/* 140609_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .info_btm ul li em{font-weight:normal;}
+.wrap_top3 .rank_cont ol li .music_info .info_btm ul li.txt{float:right;margin-top:-16px;}
+.wrap_top3 .rank_cont ol li .music_info .info_btm ul li .inssue_txt{padding-right:3px;color:#fdff00;}/* 140403_추가 aty */
+.wrap_top3 .rank_cont ol li .music_info .info_btm ul li .icon_info.issue{display:inline-block;width:12px;height:13px;padding-left:6px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/icon_realchart.png) no-repeat 1px -4px;font-size:0;line-height:0;vertical-align:top;}/* 140330_수정 aty */
+.wrap_top3 .rank_cont ol li .music_info .info_btm ul li .icon_info.rank01{display:inline-block;width:13px;height:14px;padding-left:4px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/icon_realchart.png) no-repeat -16px -1px;vertical-align:-1px;}
+.wrap_top3 .rank_cont ol li .music_info .info_btm ul li .icon_info.max{display:inline-block;width:11px;height:10px;padding-left:7px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/icon_realchart.png) no-repeat -16px -6px;}
+.wrap_top3 .rank_cont ol li .music_info .info_btm ul li .icon_info.dauily{display:inline-block;width:11px;height:12px;padding-left:7px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/icon_realchart.png) no-repeat -32px -4px;vertical-align:-1px;}
+.wrap_top3 .rank_cont ol li .music_info .info_btm ul li .icon_info.root{display:inline-block;width:11px;height:18px;margin-top:-4px;padding-left:7px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/icon_realchart.png) no-repeat -52px 0;vertical-align:-2px; }
+.wrap_top3 .rank_cont ol li .music_info .info_btm ul li .icon_info.urgent{display:inline-block;width:11px;height:11px;padding-left:7px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/icon_realchart.png) no-repeat -71px -6px;vertical-align:-2px;}
+
+/* 누가 들었나요 레이어 */
+.wrap_top3 .rank_cont ol li .hearing_layer{display:none;position:absolute;left:0;top:0;width:320px;height:319px;background:#fff;z-index:90;}
+.wrap_top3 .rank_cont ol li .hearing_layer.mactive{display:block;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap{position:relative;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap h3{margin-left:28px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .txt_desc{margin:14px 0 0 28px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender {zoom:1; width:230px; margin:42px 0 0 50px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender:after {display:block; clear:both; content:'';}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li {position: relative;display:block;float:left;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li.man{float:left;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li.woman{zoom:1; float:right;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li.woman:after {display:block; clear:both; content:'';}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li.man strong {position: absolute; bottom:-3px; left:-19px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li.man strong span {display:inline-block; width:13px; height:30px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_artist_top.png) no-repeat -3px -22px; font-size:0; line-height:0; vertical-align:top;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li.woman strong {position: absolute; bottom:-3px; right:-20px; }
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li.woman strong span {display:inline-block; width:13px; height:30px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_artist_top.png) no-repeat -31px -22px; font-size:0; line-height:0; vertical-align:top;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li .graph_bar2 {display:inline-block; width:100%; background:#e4e7e4; }
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li.woman .graph_bar2 {background:#e4e7e4;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li .graph_bar2 span {display:block; position:relative; width:100%; height:17px; background:#e4e7e4;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li.man .graph_bar2 span {display:block; position:relative; width:100%; height:17px; background:#1ebce4;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li.woman .graph_bar2 span {width:100%; background:#ff6aa5; }
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li .graph_bar2 span em {position:absolute; top:-21px; color:#1a1a1a; font-size:16px; font-weight:bold; line-height:19px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .gender li.woman .graph_bar2 span em {position:absolute; right:0;}
+
+
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group  {zoom:1; margin:23px 0 0 25px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group:after {content:''; display:block; clear:both;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li {position:relative;display:block; float:left; width:42px; height:57px; text-align:right;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li.nth1 {width:39px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li.nth6 strong {padding-right:16px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li strong {display:inline-block; position:absolute; left:0; bottom:-16px; width:100%; height:11px; padding-top:4px; border-top:1px solid #dedede; font-size:0;	line-height:0;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li strong span {display:inline-block; width:23px; height:11px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_artist_top.png) no-repeat 0 0; font-size:0; line-height:0}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li.nth1 strong span {background-position: -1px -3px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li.nth2 strong span {background-position: -45px -3px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li.nth3 strong span {background-position: -88px -3px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li.nth4 strong span {background-position: -131px -3px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li.nth5 strong span {background-position: -173px -3px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li.nth6 strong span {background-position: -215px -3px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li .graph_bar2 {position:relative; display:inline-block; width:10px; height:57px; margin-right:5px; background:#e4e7e4;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li .graph_bar2 span {position:absolute; display:inline-block; left:0; bottom:0; width:100%; background:#ffad02;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .age_group li .graph_bar2 span em {position:absolute; bottom:46px; left:0; font-size:11px; line-height:13px;}
+
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .count_num {height:26px;margin-top:24px; *margin-top:22px; padding:6px 0 0 30px;border-top:1px solid #bfcbd7;background:#e4e9f1;font-size:14px;line-height:17px;font-weight:bold;vertical-align:middle;}/* 140609_수정 */
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .count_num em{font-family:Arial;color:#566888;vertical-align:middle;font-size:14px;line-height:16px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .count_num .unit{display:inline-block;width:11px;height:13px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_count02.png) no-repeat 0 0;font-size:0;line-height:0;vertical-align:middle;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .count_num .count{display:inline-block;width:79px;height:15px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_count.png) no-repeat 0 0;font-size:0;line-height:0;vertical-align:middle;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .cont .count_num .hour{display:inline-block;width:70px;height:14px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_count03.png) no-repeat 0 0;font-size:0;line-height:0;vertical-align:middle;}
+
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .btn{position:absolute;right:14px;top:12px;width:18px;height:18px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_close02.png) no-repeat 0 0;font-size:0;line-height:0;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .btn.mhover{background-position:0 -18px;}
+.wrap_top3 .rank_cont ol li .hearing_layer .wrap .btn.mactive{background-position:0 -36px;}
+
+/* 경합중,차트올킬 레이어 */
+.wrap_top3 .real_graph .rank_layer{position:absolute; z-index:1;}
+.wrap_top3 .real_graph .rank_layer.macitve{display:block;}
+.wrap_top3 .real_graph .rank_layer .wrap{position:relative;width:320px;height:114px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_conflict.png) no-repeat 0 0;}
+.wrap_top3 .real_graph .rank_layer .wrap .btn{position:absolute;right:-9px;top:-15px;width:29px;height:29px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_close.png) no-repeat 0 0;font-size:0;line-height:0;}
+.wrap_top3 .real_graph .rank_layer .wrap .btn.mhover{background-position:0 -29px;}
+.wrap_top3 .real_graph .rank_layer .wrap .num_01{position:absolute;left:11px;top:10px;}
+.wrap_top3 .real_graph .rank_layer .wrap .num_02{position:absolute;left:218px;top:10px;}
+.wrap_top3 .real_graph .rank_layer .wrap.all_kill{width:169px;height:228px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_all_kill.png) no-repeat 0 0;}
+.wrap_top3 .real_graph .rank_layer .wrap.all_kill .num_123{position:absolute;left:18px;top:13px;}
+
+
+.wrap_tab03.type11 .last_child.vote .link_tab{padding:10px 4px 9px 4px;;width:181px;font-size:0;line-height:0;}
+.summ_prid .btn_chart{display:inline-block;float:right; height:23px; width:100px; margin-right:5px; *margin-top:-22px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_re.png) no-repeat right 0;text-indent:-9999px;}/* 140331_수정 aty */
+.summ_prid .btn_chart.mhover {background-position:right -23px;}
+.summ_prid .btn_chart.mactive {background-position:right -46px;}
+
+/* 140422_추가 aty */
+.summ_prid .btn_guide{display:inline-block;float:right; height:23px; width:71px; *margin-top:-23px; margin-right:13px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_guide.png) no-repeat 0 0; text-indent:-9999px;}/* 140331_수정 aty */
+.summ_prid .btn_guide.mhover {background-position:right -23px;}
+.summ_prid .btn_guide.mactive {background-position:right -46px;}
+.summ_prid.real_chart button:active{position:relative;top:0px;left:0px}/* 140527_수정 aty */
+
+/* 140415_수정 aty */
+.summ_prid .time_list{padding-top:8px;}
+.summ_prid .time_list li{width:53px;}
+.summ_prid .time_list li a{display:block;padding:5px 0 5px 12px;font-size:12px;line-height:14px;color:#555555;}
+.summ_prid .time_list li a:hover{background:#e6e6e6;text-decoration:none;}
+.summ_prid .time_list li .disabled{display:block;padding:5px 0 5px 12px;color:#c0c0c0;}
+
+.summ_prid.real_time .datelk{font-size:0;line-height:0;}
+.summ_prid.real_time .datelk span{display:inline-block;font-size:0;line-height:0;}
+.summ_prid.real_time .datelk .num_0{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_black.png) no-repeat 0 0;}
+.summ_prid.real_time .datelk .num_1{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_black.png) no-repeat 0 -30px;}
+.summ_prid.real_time .datelk .num_2{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_black.png) no-repeat 0 -60px;}
+.summ_prid.real_time .datelk .num_3{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_black.png) no-repeat 0 -90px;}
+.summ_prid.real_time .datelk .num_4{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_black.png) no-repeat 0 -120px;}
+.summ_prid.real_time .datelk .num_5{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_black.png) no-repeat 0 -150px;}
+.summ_prid.real_time .datelk .num_6{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_black.png) no-repeat 0 -180px;}
+.summ_prid.real_time .datelk .num_7{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_black.png) no-repeat 0 -210px;}
+.summ_prid.real_time .datelk .num_8{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_black.png) no-repeat 0 -240px;}
+.summ_prid.real_time .datelk .num_9{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_black.png) no-repeat 0 -270px;}
+.summ_prid.real_time .datelk .dot {width:9px;height:3px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_dot.png) no-repeat 3px -11px;vertical-align:bottom;}
+
+.summ_prid.real_time .hour{font-size:0;line-height:0;}
+.summ_prid.real_time .hour span{display:inline-block;font-size:0;line-height:0;vertical-align:middle;}
+.summ_prid.real_time .hour .num_0{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_green.png) no-repeat 0 0;}
+.summ_prid.real_time .hour .num_1{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_green.png) no-repeat 0 -30px;}
+.summ_prid.real_time .hour .num_2{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_green.png) no-repeat 0 -60px;}
+.summ_prid.real_time .hour .num_3{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_green.png) no-repeat 0 -90px;}
+.summ_prid.real_time .hour .num_4{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_green.png) no-repeat 0 -120px;}
+.summ_prid.real_time .hour .num_5{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_green.png) no-repeat 0 -150px;}
+.summ_prid.real_time .hour .num_6{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_green.png) no-repeat 0 -180px;}
+.summ_prid.real_time .hour .num_7{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_green.png) no-repeat 0 -210px;}
+.summ_prid.real_time .hour .num_8{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_green.png) no-repeat 0 -240px;}
+.summ_prid.real_time .hour .num_9{width:14px;height:19px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_num_green.png) no-repeat 0 -270px;}
+.summ_prid.real_time .hour .dot {width:6px;height:13px;margin-left:2px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_dot.png) no-repeat -13px -1px; vertical-align:middle;}
+.summ_prid.real_time .hour_layer{margin-left:10px;}
+
+
+/* //140507_수정 aty  실시간차트*/
+
+/* 140422_추가 aty 투토리얼 */
+.tutorial_wrap {position:relative;z-index:90;}
+.tutorial_wrap .tutorial{position:absolute;left:0;top:-404px;font-size:0;line-height:0;}
+.tutorial_wrap ul.tab {position:absolute;right:74px;top:-382px;overflow:hidden;font-size:0;line-height:0;} /* 140502_수정 aty */
+.tutorial_wrap ul.tab li{float:left;margin-right:7px;}
+.tutorial_wrap ul.tab li a{display:block;overflow:hidden;height:22px;}/* 140502_수정 aty */
+.tutorial_wrap ul.tab li.on a img,
+.tutorial_wrap ul.tab li a.hover img{display:block;margin-top:-22px;}/* 140502_수정 aty */
+.tutorial_wrap .btn_next {position:absolute; right:18px; bottom:47px; font-size:0; line-height:0;}/* 140502_수정 aty */
+.tutorial_wrap .btn_next a {display:block; overflow:hidden; height:28px; }/* 140502_수정 aty */
+.tutorial_wrap .btn_next a:hover img {display:block; margin-top:-28px;} /* 140502_수정 aty */
+
+/* 주간어워드 투표 레이어팝업 */
+.l_popup.small .award_dtl_info {padding:31px; background-color:#fff; border:1px solid #666;}
+.l_popup.small .award_dtl_info .wrap_top {height:23px; margin-bottom:8px; border-bottom:1px solid #e2e6e5;}
+.l_popup.small .award_dtl_info .wrap_top .top_info {float:left; color:#1a1a1a; font-weight:bold; font-size:14px; line-height:14px; font-family:"맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif; letter-spacing:-1px;}
+.l_popup.small .award_dtl_info .wrap_top .top_info strong {color:#739900;}
+.l_popup.small .award_dtl_info .wrap_top .vote_sumry {float:right; padding-top:3px; font-size:12px; line-height:14px;}
+.l_popup.small .award_dtl_info .wrap_top .vote_sumry .vote_rate {color:#739900; font-weight:bold;}
+.l_popup.small .award_dtl_info .wrap_top .vote_sumry .bar {color:#e2e6e5; font-size:11px;}
+.l_popup.small .award_dtl_info .wrap_top .vote_sumry .vote_cnt {}
+.l_popup.small .award_dtl_info .wrap_atist_info {height:128px;}
+.l_popup.small .award_dtl_info .wrap_atist_info .thumb_area {float:left; position:relative; width:128px; height:128px;}
+.l_popup.small .award_dtl_info .wrap_atist_info .thumb_area .wrap_baner_control {position:absolute; top:4px; left:59px; z-index:1;}
+.l_popup.small .award_dtl_info .wrap_atist_info .thumb_area .wrap_image {display:block; width:128px; height:128px; text-decoration:none; cursor:pointer;}
+.l_popup.small .award_dtl_info .wrap_atist_info .thumb_area .wrap_image .atist_prfe {display:block; width:128px; height:128px; overflow:hidden;}
+.l_popup.small .award_dtl_info .wrap_atist_info .thumb_area .wrap_image .thumb_frame {display:block; position:absolute; top:0; left:0; width:128px; height:128px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_frame_128.png) no-repeat 0 0;}
+.l_popup.small .award_dtl_info .wrap_atist_info .thumb_area .wrap_hist {position:absolute; bottom:0; left:0; width:128px; height:46px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_wrap_hist.png) repeat 0 0; text-align:center; text-decoration:none;}
+.l_popup.small .award_dtl_info .wrap_atist_info .thumb_area .wrap_hist .text1 {display:block; padding-top:6px; color:#99bf01; font-weight:bold;}
+.l_popup.small .award_dtl_info .wrap_atist_info .thumb_area .wrap_hist .text2 {display:block; margin-top:2px; color:#bbc1c3; font-size:11px; line-height:13px;}
+.l_popup.small .award_dtl_info .wrap_atist_info .thumb_area .wrap_hist .text2 span {display:inline-block; position:relative; top:-1px; *top:-3px; width:4px; height:7px; margin-left:3px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_cadcy_arr.png) no-repeat 0 0;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area {float:right; width:265px; height:128px;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_songinfo {padding-top:21px;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info {display:inline-block; *display:inline; width:192px; margin-left:8px; vertical-align:middle; *zoom:1;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dt {padding:2px 0 0; font-weight:bold; font-size:14px; line-height:16px; color:#333;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dt .ellipsis {display:block; width:185px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd .ellipsis {display:block; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd .ellipsis a {color:#666;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd .wrap_more {position:absolute; top:0; right:4px;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd .wrap_more {*top:-1px; *right:2px;} /* IE7 */
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd .wrap_more .l_popup.small {top:-8px; left:17px;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd .wrap_more .l_popup.small {*top:-7px; *left:19px;} /* IE7 */
+:root .l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd .wrap_more .l_popup.small {top:-9px\9;} /* IE9 */
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd .btn_more02 {padding:1px 5px 2px 1px; font-size:0; line-height:0;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd .btn_more02 {*padding:3px 5px 0 1px;} /* IE7 */
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd .btn_more02 span {display:inline-block; width:4px; height:8px; background:url(//cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_vdo.png) no-repeat -137px 0; text-indent:-9999px; overflow:hidden;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd .btn_more02 span {*font-size:0; *line-height:0; *text-indent:0;} /* IE7 */
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd.atistname {position:relative; margin-top:5px; padding:0 18px 0 0; font-size:12px; line-height:14px; color:#1a1a1a;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .atist_info dd.atistname.on {z-index:5;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .albuminfo {margin-top:14px; padding:12px 0 0 3px; border-top:1px solid #efefef;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .albuminfo dt {clear:both; float:left; width:38px; color:#666; font-size:11px; line-height:20px;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .albuminfo dd {float:left; color:#333; width:220px; font-size:11px; line-height:20px;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .albuminfo dd a {color:#333;}
+.l_popup.small .award_dtl_info .wrap_atist_info .song_info_area .albuminfo dd .ellipsis {display:block; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+
+/* 140331_수정 aty */
+.layer_popup.small .selct_guide {}
+.layer_popup.small .selct_guide .tit {margin-bottom:8px; color:#1a1a1a; font-weight:bold; font-size:12px; line-height:14px;}
+.layer_popup.small .selct_guide ul.selct_guide_ul.vote li{*width:100%;}
+.layer_popup.small .selct_guide ul.selct_guide_ul.vote li span.tit2{display:inline-block;width:78px;color:#666666;}/*140927 수정 lyr*/
+.layer_popup.small .selct_guide ul.selct_guide_ul.vote li span{padding:0;}
+.layer_popup.small .selct_guide ul.selct_guide_ul li {padding-left:8px; background:url(//cdnimg.melon.co.kr/resource/image/web/common/bg_list_bullet.png) no-repeat 0 9px; color:#666; line-height:24px;}/*140924 수정 lyr*/
+.layer_popup.small .selct_guide ul.selct_guide_ul li span {padding-left:16px; color:#333;}
+.layer_popup.small .selct_guide ul.selct_guide_ul li span.txt{display:block;padding-left:78px;color:#666666;}/*140924 수정 lyr*/
+.layer_popup.small .selct_guide ul.selct_guide_ul li p {color:#333; line-height:18px;}
+.layer_popup.small .selct_guide .add_info {padding:20px;}
+/* 140331_추가 aty */
+.layer_popup.small .selct_guide p.txt{margin-bottom:18px;font-size:12px;color:#333333;}
+
+.layer_popup.small .vote_guide {text-align:center;}
+.layer_popup.small .vote_guide .tit {margin-bottom:11px; color:#1a1a1a; font-weight:bold; font-size:14px; line-height:16px;}
+/* 131219_추가 kcu */
+.layer_popup.small .vote_guide .advice {margin-top:15px;}
+.layer_popup.small .vote_guide .advice02 {margin-top:15px; color:#1a1a1a;}
+.layer_popup.small .vote_guide .finish_txt {margin-top:20px;}
+
+/* 투표 진행 결과 */
+.wrap_award_vote {position:relative; width:345px; height:75px;}
+.wrap_award_vote .vote_value {position:relative; width:345px; height:75px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote_cover.png) no-repeat 0 -95px;}
+.wrap_award_vote .vote_value span {display:block; position:absolute; top:0; width:38px; height:75px; background-image:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_image_no.png); background-repeat:repeat-y;}
+.wrap_award_vote .vote_value span.no1 {left:10px;}
+.wrap_award_vote .vote_value span.no2 {left:62px;}
+.wrap_award_vote .vote_value span.no3 {left:118px;}
+.wrap_award_vote .vote_value span.no4 {left:188px;}
+.wrap_award_vote .vote_value span.no5 {left:245px;}
+.wrap_award_vote .vote_value span.no6 {left:301px;}
+.wrap_award_vote .cover {position:absolute; top:0; left:0; width:345px; height:75px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote_cover.png) no-repeat 0 0;}
+
+/* 투표 집계 완료 시간 */
+.wrap_award_timer {position:relative; width:358px; height:75px;}
+.wrap_award_timer .vote_value {position:relative; width:358px; height:75px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote_cover.png) no-repeat 0 -285px;}
+.wrap_award_timer .vote_value span {display:block; position:absolute; top:0; width:38px; height:75px; background-image:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_image_no.png); background-repeat:repeat-y;}
+.wrap_award_timer .vote_value span.no3,
+.wrap_award_timer .vote_value span.no5 {background-image:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_image_no2.png);}
+.wrap_award_timer .vote_value span.no1 {left:10px;}
+.wrap_award_timer .vote_value span.no2 {left:62px;}
+.wrap_award_timer .vote_value span.no3 {left:134px;}
+.wrap_award_timer .vote_value span.no4 {left:187px;}
+.wrap_award_timer .vote_value span.no5 {left:257px;}
+.wrap_award_timer .vote_value span.no6 {left:312px;}
+.wrap_award_timer .cover {position:absolute; top:0; left:0; width:358px; height:75px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote_cover.png) no-repeat 0 -190px;}
+
+/* 140326_aty 수정 */
+/* 주간어워드 투표 */
+.award_vote{position:relative; height:314px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_award.gif) no-repeat 0 0;}
+.award_vote ul{overflow:hidden;}
+.award_vote ul li{float:right;margin:26px 53px 0 0;}
+.award_vote ul li .vote_wrap{overflow:hidden;width:397px;}
+.award_vote ul li .vote_cont{float:right;width:185px;}
+.award_vote ul li .thumb {position:relative;float:left;width:194px;padding:1px 0 0 1px;}
+.award_vote ul li .thumb span.bg_album_frame {position:absolute;left:1px;top:1px;width:192px;height:196px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_album.png) no-repeat;}
+.award_vote ul li .thumb span.img{display:inline-block;padding:1px 0 0 1px;}
+.award_vote ul li .thumb a.btn{display:block;position:absolute;bottom:5px;left:2px;width:190px;height:54px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_vote.png) no-repeat;font-size:0;line-height:0;}
+.award_vote ul li .thumb a.btn{*left:0;*bottom:1px;}/* IE7 */
+.award_vote ul li .thumb a.btn.mhover{background-position:0 -54px;}
+.award_vote ul li .thumb a.btn.mactive{background-position:0 -108px;}
+.award_vote ul li .thumb .icon{position:absolute;left:-1px;top:-2px;}
+.award_vote ul li .thumb .icon.rank1{width:46px;height:67px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_rank_num.png) no-repeat;text-indent:-9999px;}
+.award_vote ul li .thumb .icon.rank2{width:46px;height:67px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_rank_num.png) no-repeat -56px 0;text-indent:-9999px;}
+.award_vote ul li .vote_num{margin-top:18px;padding-bottom:4px;border-bottom:1px solid #dbdbdb;}
+.award_vote ul li .vote_num strong{font-size:60px;line-height:73px;font-family:Arial, "Apple Gothic", sans-serif;letter-spacing:-1px;color:#b0c3cc; font-weight:normal;}/* 140408_수정 aty */
+.award_vote ul li .vote_num span {display:block;margin-top:-6px;font-size:18px;line-height:20px;font-family:Arial, "Apple Gothic", sans-serif;color:#9c9c9c;}
+.award_vote ul li .vote_num span em{display:inline-block;width:13px;height:11px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_vote01.gif) no-repeat 0 0;text-indent:-9999px;font-size:0;line-height:0;vertical-align:middle;}
+.award_vote ul li .song_info {margin-top:7px;}
+.award_vote ul li .song_info .singer{display:inline-block;width:185px;max-width:185px; overflow:hidden; margin-top:3px;text-overflow: ellipsis; vertical-align: middle; white-space: nowrap; word-wrap: normal;color:#999999;}/* 140408_수정 aty */
+.award_vote ul li .song_info .singer a{display:inline; font-size:13px;font-family:"맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif;color:#999999;}/* 140404_수정 aty */
+.award_vote ul li .song_info .song {display:inline-block;width:185px;max-width:185px; overflow:hidden; margin-top:2px;text-overflow: ellipsis; vertical-align: middle; white-space: nowrap; word-wrap: normal;}/* 140408_수정 aty */
+.award_vote ul li .song_info .song span{font-size:0;line-height:0;vertical-align:middle;}
+.award_vote ul li .song_info .song a{font-size:15px;line-height:20px;font-family:"맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif;color:#1a1a1a;letter-spacing:-1px;}/* 140408_수정 aty */
+.award_vote ul li .song_info .song strong{font-size:15px;line-height:17px;font-family:"맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif;color:#c0c0c0;letter-spacing:-1px;}
+.award_vote ul li:first-child{float:left;margin:26px 0 0 53px;}
+.award_vote ul li:first-child .vote_cont{float:left;text-align:right;}
+.award_vote ul li:first-child .thumb{float:right;}
+.award_vote ul li:first-child .vote_num strong{font-family:Arial, "Apple Gothic", sans-serif;letter-spacing:-1px;color:#3e545e; font-weight:normal;}/* 140408_수정 aty */
+
+/* 140401_aty 수정 */
+.award_vote .vote_time{overflow:hidden;}
+.award_vote .vote_time .vote_count{float:left;width:238px;margin:41px 18px 0 0;text-align:right;}
+.award_vote .vote_time .vote_count span{font-size:22px;font-family:Arial, "Apple Gothic", sans-serif;color:#42a0bb;}
+.award_vote .vote_time .vote_count img{vertical-align:-1px;}/* 140410_수정 aty */
+.award_vote .vote_time .vote_progress{position:relative;float:left;width:491px;height:58px;*margin-top:5px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_progress.gif) repeat-x bottom;}
+.award_vote .vote_time .vote_progress .ing{position:absolute;left:0;top:44px;height:14px;max-width:491px;background:#42535b;}
+.award_vote .vote_time.vote_active .vote_progress .ing{border:none;background:#42535b url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote03.png) no-repeat right 0;}
+.award_vote .vote_time .vote_progress .vote_ing{position:absolute;top:-38px;width:109px;height:51px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote01.png) no-repeat 0 0;font-size:0;line-height:0;}
+.award_vote .vote_time.vote_active .vote_progress .vote_ing {display:none;}
+.award_vote .vote_time.vote_active .vote_progress .vote_end {display:block;}
+.award_vote .vote_time .vote_progress .vote_end{display:none;position:absolute;top:-43px;width:147px;height:55px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote02.png) no-repeat 0 0;font-size:0;line-height:0;}/* 140508_수정 aty */
+.award_vote .vote_time .remain_time{position:relative;float:right;width:235px;height:19px;margin-top:39px;*margin-top:44px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_remain.gif) no-repeat 0 6px;}/* 140410_수정 aty */
+.award_vote .vote_time.vote_active .remain_time{background-position:0 -16px;}/* 140411_수정 aty */
+.award_vote .vote_time .remain_time span{float:left;font-size:22px;font-family:Arial, "Apple Gothic", sans-serif;color:#80ba00;line-height:24px;vertical-align:top;}
+.award_vote .vote_time .remain_time .time01{width:50px;height:13px;margin-top:5px;text-indent:-9999px;}
+.award_vote .vote_time .remain_time .time03{width:43px;padding-left:7px;text-align:center;}/* 140409_수정 aty */
+.award_vote .vote_time .remain_time .time04{width:26px;padding-left:17px;text-align:center;}
+.award_vote .vote_time .remain_time .time05{width:26px;padding-left:17px;text-align:center;}
+.award_vote .vote_time.vote_active .remain_time.time01{background-position:0 -27px;}
+.award_vote .vote_time.vote_active .remain_time span{color:#f7634c;}
+/* 140508_추가 aty */
+.award_vote .vote_time .remain_time .vote_txt {position:absolute; left:0; top:-27px; height:23px; width:87px; padding:6px 0 0 61px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote_end02.png) no-repeat 0 0;}
+.award_vote .vote_time .remain_time .vote_txt span {font-size:11px; line-height:11px; color:#888888; font-family:"돋움",Dotum; vertical-align:middle;}
+
+
+.award_vote .vote_layer{display:none;position:absolute;left:-5px;top:-8px;width:1004px;height:311px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote_end.png) no-repeat 0 0;}
+.award_vote .vote_layer.d_end{}
+.award_vote.d_result .vote_layer{display:block;}
+.award_vote .vote_layer .txt{margin:112px 0 18px 321px;}
+.award_vote .vote_layer .vote_result{width:987px;height:139px;margin-left:16px;background:#94979e;opacity:0.8;filter:alpha(opacity=80);}
+.award_vote .vote_layer.d_end .vote_result{display:none;}
+.award_vote .vote_layer .vote_result p{height:27px;padding:32px 0 0 264px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/txt_vote05.png) no-repeat 264px 39px;color:#fff;}
+.award_vote .vote_layer .vote_result p .time03{padding-left:131px;font-size:35px;font-family:Arial, "Apple Gothic", sans-serif;line-height:36px;}
+.award_vote .vote_layer .vote_result p .time04{padding-left:23px;font-size:35px;font-family:Arial, "Apple Gothic", sans-serif;line-height:36px;}
+.award_vote .vote_layer .vote_result p .time05{padding-left:27px;font-size:35px;font-family:Arial, "Apple Gothic", sans-serif;line-height:36px;}/* 140331_수정 aty */
+.award_vote .vote_layer .btn_vote{display:none;text-align:center;}
+.award_vote .vote_layer.d_end .btn_vote{display:block;}
+.award_vote .vote_layer.d_end .btn_vote .btn{display:inline-block;width:222px;height:45px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_vote02.gif) no-repeat 0 0;font-size:0;line-height:0;}
+.award_vote .vote_layer.d_end .btn_vote .btn.mhover{background-position:0 -45px;}
+.award_vote .vote_layer.d_end .btn_vote .btn.mactive{background-position:0 -90px;}
+.btn_right {margin:9px 0 16px;text-align:right;}
+.btn_right .wrap_btn_sns{float:left;}
+/*140915 추가 lyr*/
+.btn_right .wrap_btn_sns .btn_sns span.odd_span {background:url(//cdnimg.melon.co.kr/resource/image/web/common/bg_btn_sns03_140822.png) no-repeat left top;}
+
+.btn_right .wrap_btn_sns .btn_sns.facebook span.odd_span {width:31px; background-position:left top;}
+.btn_right .wrap_btn_sns .btn_sns.facebook.mhover span.odd_span, .btn_sns.facebook:focus span.odd_span {width:31px; background-position:left -44px;}
+.btn_right .wrap_btn_sns .btn_sns.facebook.mactive span.odd_span, .btn_sns.facebook.on span.odd_span {width:31px; background-position:left -89px;}
+.btn_right .wrap_btn_sns .btn_sns.facebook.disabled span.odd_span {width:31px; background-position:left -129px;}
+
+.btn_right .wrap_btn_sns .btn_sns.twitter span.odd_span {width:31px; background-position:right top;}
+.btn_right .wrap_btn_sns .btn_sns.twitter.mhover span.odd_span, .btn_sns.twitter:focus span.odd_span {width:31px; background-position:right -44px;}
+.btn_right .wrap_btn_sns .btn_sns.twitter.mactive span.odd_span, .btn_sns.twitter.on span.odd_span {width:31px; background-position:right -89px;}
+.btn_right .wrap_btn_sns .btn_sns.twitter.disabled span.odd_span {width:31px; background-position:right  -129px;}
+
+.btn_right a.btn_aid{display:inline-block;width:104px;height:35px;padding-left:56px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_aid.gif) no-repeat 0 0; font-size:14px; line-height:35px;text-align:left;color:#fff;font-weight:bold;text-decoration:none;}
+.btn_right a.btn_aid:hover{background-position:0 -35px;}
+.btn_right a.btn_aid:active{background-position:0 -70px;}
+/* //140401_aty aty */
+
+.wrap_age_rvew h3{padding:25px 0 12px; color: #1A1A1A; font-family: "맑은 고딕","Malgun Gothic","돋움","Dotum", "Apple Gothic", sans-serif; font-size: 18px; font-weight: bold; letter-spacing: -1px; line-height: 24px;}
+.summ_prid .datelk.vote_date {display:inline-block;*margin-top:-2px;font-size:18px;line-height:24px;font-family: "맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif;font-weight: bold;vertical-align:-1px;}
+.summ_prid .datelk.vote_date em{font-family:Arial, "Apple Gothic", sans-serif;font-size:20px; line-height:24px; vertical-align:-2px;}
+/* 140327_aty 추가 */
+.summ_prid .datelk.vote_date02{font-size:20px;}
+.vote_result02 {height:99px;width:1006px;margin-top:33px;padding-top:33px;border:1px solid #c0c0c0;text-align:center;}
+.vote_result02 .txt{font-size:0;line-height:0;}
+.vote_result02 .result_time p{margin:16px 0 0 254px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_result.png) no-repeat 16px 6px;text-align:left;}/* 141013_modify */
+.vote_result02 .result_time p .time01 {display:inline-block; width:30px; font-size:25px; line-height:25px;font-family:Arial, "Apple Gothic", sans-serif;color:#7e8385;vertical-align:0;text-align: right;}/* 141013_modify */
+.vote_result02 .result_time p .time02 {padding-left:21px;font-size:25px; line-height:25px;font-family:Arial, "Apple Gothic", sans-serif;color:#7e8385;vertical-align:0;}
+.vote_result02 .result_time p .time03 {padding-left:220px;font-size:36px; line-height:36px;font-family:Arial, "Apple Gothic", sans-serif;color:#42535b;vertical-align:-4px;}/* 140331_수정 aty */
+.vote_result02 .result_time p .time04 {padding-left:30px;font-size:36px; line-height:36px;font-family:Arial, "Apple Gothic", sans-serif;color:#42535b;vertical-align:-4px;}/* 140331_수정 aty */
+.vote_result02 .result_time p .time05 {padding-left:30px;font-size:36px; line-height:36px;font-family:Arial, "Apple Gothic", sans-serif;color:#42535b;vertical-align:-4px;}/* 140331_수정 aty */
+
+/* 1위 곡 상세 정보 */
+.result_cont {border:1px solid #c3c3c3;margin-bottom:32px;}
+.result_cont .result_wrap {overflow:hidden;padding:10px 46px 9px 33px;}
+.result_cont .result_wrap .thumb{position:relative;float:left;}
+.result_cont .result_wrap .thumb .img{position:relative;display:block; z-index:0;}
+.result_cont .result_wrap .thumb .img .bg_album_frame {position:absolute;left:0;top:0;width:169px;height:170px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_album02.png) no-repeat;cursor:pointer;}
+.result_cont .result_wrap .thumb .icon.rank1{position:absolute;left:4px;top:-2px;width:46px;height:67px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_rank_num.png) no-repeat;text-indent:-9999px;}
+.result_cont .result_wrap .song_info{float:left; width:723px; margin:18px 0 0 35px;*margin-top:7px;}
+.result_cont .result_wrap .song_info .wrap_song_info {position:relative;border-bottom:1px solid #dfdfdf; padding-bottom:19px;}
+.result_cont .result_wrap .song_info .wrap_song_info .ellipsis {display: inline-block; overflow: hidden; text-overflow: ellipsis; vertical-align: middle; white-space: nowrap; word-wrap: normal;}
+.result_cont .result_wrap .song_info .wrap_song_info .song{display:inline-block;max-width:361px;margin-top:-5px;}
+.result_cont .result_wrap .song_info .wrap_song_info .song a{font-size:26px; line-height:34px; font-family: "맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif;font-weight:bold;}
+.result_cont .result_wrap .song_info .wrap_song_info .song a .btn_icon{*margin-bottom:-5px;}
+.result_cont .result_wrap .song_info .wrap_song_info .song a:hover .btn_icon span.odd_span{background:url(//cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_green.png) no-repeat -269px top}
+.result_cont .result_wrap .song_info .wrap_song_info .song strong {font-size:26px; line-height:34px; font-family: "맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif;font-weight:bold;color:#c0c0c0;}}/* 140403_추가 aty */
+.result_cont .result_wrap .song_info .wrap_song_info .song strong .btn_icon{*margin-bottom:-5px;}/* 140403_추가 aty */
+.result_cont .result_wrap .song_info .wrap_song_info .singer {display:inline-block;max-width:173px;color:#666666;}
+.result_cont .result_wrap .song_info .wrap_song_info .singer a{font-size:16px; line-height:20px; font-family: "맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif;font-weight:bold;color:#666666;}
+.result_cont .result_wrap .song_info .wrap_song_info .total_num {position:absolute;right:0;top:-2px; *top:5px; font-family: "맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif; font-size:28px; line-height:32px; font-weight:bold; color:#999999;}
+.result_cont .result_wrap .song_info .wrap_song_info .total_num span{font-family:Arial, "Apple Gothic", sans-serif;font-size:32px;line-height:36px;vertical-align:-2px;}
+.result_cont .result_wrap .song_info .vote_num02 li{ overflow:hidden;height:21px;width:720px;margin-top:12px;}
+.result_cont .result_wrap .song_info .vote_num02 li.graph01 {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote_num01.png) no-repeat 0 0;}
+.result_cont .result_wrap .song_info .vote_num02 li.graph02 {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote_num02.png) no-repeat 0 0;}
+.result_cont .result_wrap .song_info .vote_num02 li .tit{float:left;width:58px;padding:3px 0 0 21px;color:#363636;}
+.result_cont .result_wrap .song_info .vote_num02 li .num{float:right;padding:3px 12px 0 0;color:#666666;font-size:11px;font-family:"돋움", "Dotum", "Apple Gothic", sans-serif;}
+.result_cont .result_wrap .song_info .vote_num02 li .bar_graph {position:relative;float:left;width:553px;font-size:0;line-height:0;}
+.result_cont .result_wrap .song_info .vote_num02 li.graph01 .bar_graph .bar_graph02 {position:absolute;left:0;top:1px;height:17px;border:1px solid #6fa100; background:#80ba00;}
+.result_cont .result_wrap .song_info .vote_num02 li.graph02 .bar_graph .bar_graph02 {position:absolute;left:0;top:2px;height:17px;border:1px solid #d69100; background:#ffad02;}
+.result_cont .record_wrap {position:relative;float:right;margin:-41px 46px 0 0;z-index:10;}/* 140331_수정 aty  */
+.result_cont .record_wrap .btn_text .text{padding-right:10px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/btn_open_close.png) no-repeat right 5px;color:#999999;}
+.result_cont .record_wrap .btn_text.on .text{background-position:right -12px;}
+.result_cont .record_wrap .record_list table th{padding:16px 0 8px;border-bottom:1px solid #d2d2d2;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_record03.gif) no-repeat left 17px;text-align:center;font-weight:bold;color:#363636;font-family:"돋움", "Dotum", "Apple Gothic", sans-serif;}
+.result_cont .record_wrap .record_list table th:first-child {background:none;}
+.result_cont .record_wrap .record_list table th .record01{display:inline-block;width:10px;height:13px;padding-left:8px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_record01.gif) no-repeat 0 1px;}
+.result_cont .record_wrap .record_list table th .record02{display:inline-block;width:10px;height:13px;padding-left:6px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_record02.gif) no-repeat 0 0;}
+.result_cont .record_wrap .record_list table td {padding-top:11px;text-align:center;vertical-align:middle;font-family:"돋움", "Dotum", "Apple Gothic", sans-serif;}
+.result_cont .record_wrap .record_list table tr:first-child td{padding-top:20px;}
+.result_cont .record_wrap .record_list table td .wrap_bar_graph{position:relative;width:151px;height:9px;}
+.result_cont .record_wrap .record_list table td .wrap_bar_graph.type01{float:right;}
+.result_cont .record_wrap .record_list table td .wrap_bar_graph.type01 .bar_graph{width:151px;height:9px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote04.gif) no-repeat;}
+.result_cont .record_wrap .record_list table td .wrap_bar_graph.type01 .bar_graph02{position:absolute;right:0;top:0;max-width:149px;height:7px;border:1px solid #6fa100; background:#80ba00;font-size:0;line-height:0;}
+.result_cont .record_wrap .record_list table td .wrap_bar_graph.type02{float:left;}
+.result_cont .record_wrap .record_list table td .wrap_bar_graph.type02 .bar_graph{width:151px;height:9px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote05.gif) no-repeat;}
+.result_cont .record_wrap .record_list table td .wrap_bar_graph.type02 .bar_graph02 {position:absolute;left:0;top:0;max-width:149px;height:7px;border:1px solid #d69100; background:#ffad02;font-size:0;line-height:0;}
+.result_cont .record_wrap .record_list table td .date {color:#999999;}
+.result_cont .record_wrap .record_list table td .num {color:#333333;}
+
+/* 주간어워드 투표 집계중 */
+.award_vote_summ {width:1008px; height:244px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_award_vote_summ.png) no-repeat 0 0;}
+.award_vote_summ .vote_stus {padding-top:105px; padding-left:10px; color:#333; font-weight:bold; font-size:14px; line-height:18px; text-align:center;}
+.award_vote_summ .vote_guide {padding-top:49px; padding-left:10px; color:#666; font-size:11px; line-height:18px; text-align:center;}
+
+/* 주간어워드 투표 준비중 */
+.award_vote_pend {position:relative; width:1008px; height:244px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_award_vote_pend.png) no-repeat 0 0;}
+.award_vote_pend .wrap_award_timer {position:absolute; top:65px; left:325px;}
+.award_vote_pend .wrap_award_timer .timer_title {position:absolute; top:-41px; left:0; width:358px; color:#666; font-size:12px; line-height:14px; text-align:center;}
+.award_vote_pend .vote_pend_guide {padding-top:168px; padding-left:10px; text-align:center;}
+.award_vote_pend .vote_pend_guide .time_guide {color:#333; font-weight:bold; font-size:14px; line-height:16px;}
+.award_vote_pend .vote_pend_guide .time_guide strong {color:#739900;}
+.award_vote_pend .vote_pend_guide .sub_text {margin-top:7px; color:#666; font-size:11px; line-height:18px;}
+
+/* 주간어워드 결과 발표 */
+.award_vote_rsult {position:relative; width:1008px; height:244px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_award_vote_rsult.png) no-repeat 0 0;}
+.award_vote_rsult .thumb_area {position:absolute; top:43px; left:304px; width:175px; height:175px;}
+.award_vote_rsult .thumb_area .wrap_baner_control {position:absolute; top:6px; left:106px; z-index:1;}
+.award_vote_rsult .thumb_area .wrap_image {display:block; width:175px; height:175px; text-decoration:none; cursor:pointer;}
+.award_vote_rsult .thumb_area .wrap_image .atist_prfe {display:block; width:175px; height:175px; overflow:hidden;}
+.award_vote_rsult .thumb_area .wrap_image .thumb_frame {display:block; position:absolute; top:0; left:0; width:175px; height:175px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_frame_175.png) no-repeat 0 0;}
+.award_vote_rsult .thumb_area .wrap_hist {position:absolute; bottom:0; left:0; width:175px; height:46px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_wrap_hist.png) repeat 0 0; text-align:center; text-decoration:none;}
+.award_vote_rsult .thumb_area .wrap_hist .text1 {display:block; padding-top:6px; color:#99bf01; font-weight:bold;}
+.award_vote_rsult .thumb_area .wrap_hist .text2 {display:block; margin-top:2px; color:#bbc1c3; font-size:11px; line-height:13px;}
+.award_vote_rsult .thumb_area .wrap_hist .text2 span {display:inline-block; position:relative; top:-1px; *top:-3px; width:4px; height:7px; margin-left:3px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_cadcy_arr.png) no-repeat 0 0;}
+.award_vote_rsult .song_info_area {position:absolute; top:43px; left:504px; width:456px; height:175px; /* background:red; */}
+.award_vote_rsult .song_info_area .atist_songinfo {height:54px; padding:14px 0 0 16px;}
+.award_vote_rsult .song_info_area .atist_info {display:inline-block; *display:inline; width:358px; margin-left:8px; vertical-align:middle; *zoom:1;}
+.award_vote_rsult .song_info_area .atist_info dt {padding:2px 0 0; font-weight:bold; font-size:14px; line-height:16px; color:#333;}
+.award_vote_rsult .song_info_area .atist_info dt .ellipsis {display:block; width:350px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.award_vote_rsult .song_info_area .atist_info dd .ellipsis {display:block; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.award_vote_rsult .song_info_area .atist_info dd .ellipsis a {color:#666;}
+.award_vote_rsult .song_info_area .atist_info dd .wrap_more {position:absolute; top:0; right:4px;}
+.award_vote_rsult .song_info_area .atist_info dd .wrap_more {*top:-1px; *right:2px;} /* IE7 */
+.award_vote_rsult .song_info_area .atist_info dd .wrap_more .l_popup.small {top:-8px; left:17px;}
+.award_vote_rsult .song_info_area .atist_info dd .wrap_more .l_popup.small {*top:-7px; *left:19px;} /* IE7 */
+:root .award_vote_rsult .song_info_area .atist_info dd .wrap_more .l_popup.small {top:-9px\9;} /* IE9 */
+.award_vote_rsult .song_info_area .atist_info dd .btn_more02 {padding:1px 5px 2px 1px; font-size:0; line-height:0;}
+.award_vote_rsult .song_info_area .atist_info dd .btn_more02 {*padding:3px 5px 0 1px;} /* IE7 */
+.award_vote_rsult .song_info_area .atist_info dd .btn_more02 span {display:inline-block; width:4px; height:8px; background:url(//cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_vdo.png) no-repeat -137px 0; text-indent:-9999px; overflow:hidden;}
+.award_vote_rsult .song_info_area .atist_info dd .btn_more02 span {*font-size:0; *line-height:0; *text-indent:0;} /* IE7 */
+.award_vote_rsult .song_info_area .atist_info dd.atistname {position:relative; margin-top:5px; padding:0 18px 0 0; font-size:12px; line-height:14px; color:#1a1a1a;}
+.award_vote_rsult .song_info_area .atist_info dd.atistname.on {z-index:5;}
+.award_vote_rsult .song_info_area .albuminfo {height:31px; padding:12px 0 0 15px;}
+.award_vote_rsult .song_info_area .albuminfo dt {float:left; width:38px; color:#666; font-size:11px; line-height:20px;}
+.award_vote_rsult .song_info_area .albuminfo dd {float:left; color:#333; font-size:11px; line-height:20px;}
+.award_vote_rsult .song_info_area .albuminfo dd a {color:#333;}
+.award_vote_rsult .song_info_area .albuminfo dd .ellipsis {display:inline-block; max-width:250px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.award_vote_rsult .song_info_area .albuminfo dd.bar {margin:0 6px; color:#d9d9d9;}
+.award_vote_rsult .vote_value_info {position:relative; padding:16px 0 0 16px;}
+.award_vote_rsult .vote_value_info .multi_bar_graph {width:369px; height:14px; background-color:#d5d7dd;}
+.award_vote_rsult .vote_value_info .multi_bar_graph .bar_graph {float:left; display:block; position:relative; height:14px;}
+.award_vote_rsult .vote_value_info .multi_bar_graph .bar_graph.type01 {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bar_graph_green.png) repeat-x 0 0;}
+.award_vote_rsult .vote_value_info .multi_bar_graph .bar_graph.type02 {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bar_graph_gray.png) repeat-x 0 0;;}
+.award_vote_rsult .vote_value_info .multi_bar_graph .bar_graph .vote_value {position:absolute; top:19px; left:-1px; font-size:11px;}
+.award_vote_rsult .vote_value_info .multi_bar_graph .bar_graph .vote_value span {color:#333;}
+.award_vote_rsult .vote_value_info .tot_value {position:absolute; top:15px; right:14px; color:#333;}
+
+/* 멜론 뮤직어워드 인기상 후보 */
+.award_star_cadcy {position:relative; width:1008px; height:244px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_award_star_cadcy.png) no-repeat 0 0;}
+.award_star_cadcy .list_star_cadcy {position:absolute; top:38px; left:88px;}
+.award_star_cadcy .list_star_cadcy li {float:left; position:relative; width:184px; height:184px; margin-right:32px; background:red;}
+.award_star_cadcy .list_star_cadcy li .wrap_thumb {display:block; position:relative; width:184px; height:184px; cursor:pointer;}
+.award_star_cadcy .list_star_cadcy li .wrap_thumb .atist_name {display:block; position:absolute; bottom:0; left:0; width:184px; height:35px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_wrap_hist.png) repeat 0 0; color:#fff; text-align:center;}
+.award_star_cadcy .list_star_cadcy li .wrap_thumb .atist_name .ellipsis {display:inline-block; width:150px; margin-top:11px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; color:#fff; font-weight:bold; font-size:12px; line-height:14px;}
+.award_star_cadcy .list_star_cadcy li .co {position:absolute; top:-8px; right:-8px; width:40px; height:32px; padding-top:30px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_prize.png) no-repeat 0 0; color:#fff; font-weight:bold; font-size:14px; line-height:20px; font-family:"맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif; text-align:center;}
+.award_star_cadcy .list_star_cadcy li .co span {font-size:16px; vertical-align:top;}
+.award_star_cadcy .wrap_page {position:absolute; top:-29px; right:0;}
+
+/* 뮤직어워드 타이틀 영역  */
+.week_cadcy {position:relative; height:25px; padding-top:23px; padding-bottom:12px; z-index:5;}
+.week_cadcy h3 {display:inline-block; *display:inline; color:#1a1a1a; font-weight:bold; font-size:18px; line-height:24px; font-family:"맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif; vertical-align:middle;}
+.week_cadcy .sub_text {display:inline-block; padding-left:10px; *padding-left:14px; color:#666; font-size:11px; line-height:13px; vertical-align:middle;}
+.week_cadcy .sub_text.pt12 {padding-top:12px;}
+.week_cadcy .btn_selct {position:absolute; top:31px; right:8px; *top:29px; *right:0;}
+.week_cadcy .btn_selct.week {top:25px;}
+.week_cadcy .btn_selct.byselct {right:200px; *right:192px;}
+.week_cadcy .summ_prid {padding:0 0 0 8px;}
+.week_cadcy .summ_prid .week_info {display:inline-block; *margin-top:-2px; color:#1a1a1a; font-weight:bold; font-size:18px; line-height:18px; *line-height:24px; font-family:"맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif; vertical-align:top;}
+.week_cadcy .wrap_selct {position:absolute; top:23px; right:0;}
+.week_cadcy .wrap_selct .btn_text {margin:7px 12px 0 0;}
+.week_cadcy .wrap_selct .btn_base {height:26px;}
+
+/* 주간어워드 후보 목록 */
+.list_award_cadcy {clear:both; border-top:1px solid #ccc; padding-top:16px;}
+.list_award_cadcy ul.clfix		{width:1030px; margin:0 -22px -32px 0;}
+.list_award_cadcy ul.clfix li	{float:left; width:184px; height:228px; margin:0 22px 32px 0;}
+.list_award_cadcy .wrap_thumb {display:block; position:relative; width:184px; height:184px; text-decoration:none;}
+.list_award_cadcy a.wrap_thumb {cursor:pointer;}
+.list_award_cadcy .wrap_thumb .wrap_prfe {display:block; position:relative; width:184px; height:184px; overflow:hidden;}
+.list_award_cadcy .wrap_thumb .wrap_prfe img {position:absolute; top:0; left:0;}
+.list_award_cadcy .thumb_frame {display:block; position:absolute; top:0; left:0; width:184px; height:184px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_thumb_frame_cadcy.png) no-repeat 0 0;}
+.list_award_cadcy .thumb_frame .song_name {display:block; position:absolute; top:143px; left:10px; width:164px; white-space:nowrap; text-overflow:ellipsis; overflow:hidden; color:#fff; font-size:12px; line-height:14px; text-align:center;}
+/* 140213_추가 kcu */
+.list_award_cadcy .thumb_frame .song_name strong.none {font-size:12px;}
+.list_award_cadcy .thumb_frame .vote_rate {position:absolute; top:162px; left:10px; width:74px; color:#99bf01; font-weight:bold; font-size:12px; line-height:12px; text-align:right;}
+.list_award_cadcy .thumb_frame .vote_cnt {position:absolute; top:162px; left:97px; width:77px; color:#abb0b2; font-size:12px; line-height:12px;}
+.list_award_cadcy .wrap_thumb .dtl_info {display:none; position:absolute; top:0; left:0; width:184px; height:133px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_cadcy_dtl.png) no-repeat 0 0; text-align:center;}
+.list_award_cadcy .wrap_thumb.mhover .dtl_info,
+.list_award_cadcy .wrap_thumb:focus .dtl_info {display:block;}
+.list_award_cadcy .wrap_thumb .dtl_info .text1 {display:block; margin-top:39px; color:#a2a7a9; font-size:12px; line-height:16px;}
+.list_award_cadcy .wrap_thumb .dtl_info .text2 {display:block; margin-top:12px; color:#bbc1c3; font-size:11px; line-height:13px;}
+.list_award_cadcy .wrap_thumb .dtl_info .text2 span {display:inline-block; position:relative; top:-1px; *top:-3px; width:4px; height:7px; margin-left:3px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_cadcy_arr.png) no-repeat 0 0;}
+.list_award_cadcy ul.clfix li p.t_center {margin-top:12px;}
+
+/* 주간어워드 투표 테이블 */
+/* 140327_aty 수정 */
+.week_award_rsult {}
+.week_award_rsult .tb_list.type02 td.no .wrap {color:#666; font-size:16px; line-height:1.2em;}
+.week_award_rsult .tb_list.type02 .wrap {padding:0;}
+.week_award_rsult .tb_list.type02 tbody td:first-child .wrap{padding:0 8px;}
+.week_award_rsult .tb_list.type02 .wrap_song_info  {max-width:320px;}
+.week_award_rsult .tb_list.type02 .ellipsis.rank01 {max-width:320px;}
+.week_award_rsult .tb_list.type02 .ellipsis.rank02 {max-width:184px;}/*140911 수정 lyr*/
+.week_award_rsult .tb_list.type02 .ellipsis.rank03 {max-width:100px;}
+.week_award_rsult .tb_list.type02 .wrap .wrap_bar_graph {position:relative; width:346px; height:8px;}
+/* 140422_수정 aty 주간어워드 그래프영역 */
+.week_award_rsult .tb_list.type02 .wrap .wrap_bar_graph .bar_graph {position:relative;float:left;width:304px;height:8px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote01.gif) no-repeat;}
+.week_award_rsult .tb_list.type02 .wrap .wrap_bar_graph .bar_graph02 {position:absolute; left:0; top:0; height:6px; max-width:302px; border:1px solid #7cb301;background:#80ba00;}
+.week_award_rsult .tb_list.type02 .wrap .wrap_bar_graph .rsult_value {position:absolute; top:-2px; right:-12px; width:45px; font-size:16px;color:#666666;font-family:Arial, "Apple Gothic", sans-serif;text-align:right;font-weight:bold;}/* 140408_수정 aty */
+.week_award_rsult .tb_list.type02 .wrap .wrap_bar_graph.type01{width:189px;height:10px;}
+.week_award_rsult .tb_list.type02 .wrap .wrap_bar_graph.type01 .bar_graph{position:relative;float:right;width:148px;height:10px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote02.gif) no-repeat right top;}
+.week_award_rsult .tb_list.type02 .wrap .wrap_bar_graph.type01 .bar_graph02 {position:absolute; right:0; left:auto; top:0; height:8px; max-width:146px; border:1px solid #6fa100;background:#80ba00;}
+.week_award_rsult .tb_list.type02 .wrap .wrap_bar_graph.type01 .rsult_value {position:absolute; top:-2px; left:-2px; width:42px; font-size:12px;color:#666666;font-family:"돋움",Dotum, "Apple Gothic", sans-serif;font-weight:normal;}/*140911 수정 lyr*/
+.week_award_rsult .tb_list.type02 .wrap .wrap_bar_graph.type02{width:189px;height:10px;}
+.week_award_rsult .tb_list.type02 .wrap .wrap_bar_graph.type02 .bar_graph{position:relative;float:left;width:148px;height:10px;background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_vote03.gif) no-repeat left top;}
+.week_award_rsult .tb_list.type02 .wrap .wrap_bar_graph.type02 .bar_graph02 {position:absolute; left:0; top:0; height:8px; max-width:146px; border:1px solid #d69100;background:#ffad02;}
+.week_award_rsult .tb_list.type02 .wrap .wrap_bar_graph.type02 .rsult_value {position:absolute; top:-2px; right:-4px; width:42px; font-size:12px;color:#666666;font-family:"돋움",Dotum, "Apple Gothic", sans-serif;font-weight:normal;text-align:left;}/*140911 수정 lyr*/
+/* //140422_수정 aty 주간어워드 그래프영역 */
+
+
+/*** 주간어워드 결과 타임라인 ***/
+/* Artist Timeline No Data */
+.no_data_timeline {padding:53px 0 56px;}
+.no_data_timeline p {color:#1a1a1a; font-size:14px; line-height:16px; font-family:"맑은 고딕", "Malgun Gothic", "Apple Gothic", sans-serif; text-align:center;}
+
+/* Artist Timeline */
+.wrap_cadcy_timeline {position:relative; margin-top:8px; padding:24px 16px 0; border-top:1px solid #ccc; background:url(//cdnimg.melon.co.kr/resource/image/web/common/bg_timeline_bar.png) repeat-y 0 0;}
+.wrap_cadcy_timeline {*padding:29px 16px 0;}
+.wrap_cadcy_timeline .list_timeline {position:relative;}
+.list_timeline ul.list_timeline_ul li {display:none; position:absolute;}
+.list_timeline ul.list_timeline_ul li.lc_left {left:0;}
+.list_timeline ul.list_timeline_ul li.lc_right {right:0;}
+.list_timeline ul.list_timeline_ul li.lc_left.on {z-index:5;}
+.list_timeline ul.list_timeline_ul li.lc_right.on {z-index:5;}
+.list_timeline ul.list_timeline_ul li .wrap_icon {position:absolute; top:0; width:69px; height:40px; background-image:url(//cdnimg.melon.co.kr/resource/image/web/common/bg_timeline_arr.png); background-repeat:no-repeat;}
+.list_timeline ul.list_timeline_ul li.lc_left .wrap_icon {right:-69px; background-position:0 0;}
+.list_timeline ul.list_timeline_ul li.lc_right .wrap_icon {left:-69px; background-position:right -50px;}
+.list_timeline ul.list_timeline_ul li .box_act .icon_act {position:absolute; top:0; width:40px; height:32px; padding-top:8px; background-image:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_icon_act.png); background-repeat:no-repeat; color:#739900; font-size:11px; line-height:12px; text-align:center;}
+.list_timeline ul.list_timeline_ul li .box_act .icon_act strong {display:block;}
+
+.list_timeline ul.list_timeline_ul li.lc_left .box_act .icon_act {right:0;}
+.list_timeline ul.list_timeline_ul li.lc_right .box_act .icon_act {left:0;}
+.wrap_cadcy_timeline .btn_full {display:block; height:33px;}
+
+.list_timeline li .box_act .icon_act    {background-position:0 0;} /* 곡,앨범 좋아요 아이콘 */
+
+/* box common */
+.list_timeline li .box_act {position:relative; width:408px; border:1px solid #e6e6e6; padding:12px 15px 0; background-color:#fff;}
+.list_timeline li .box_act .box_desc {padding-bottom:11px; color:#666; font-size:12px; line-height:18px; /* letter-spacing:-1px; */ word-break:break-all;}
+.list_timeline li .box_act .box_desc span {color:#1a1a1a;}
+.list_timeline li .box_act .reg_date {margin-top:10px; padding-left:18px; color:#666; font-size:11px; line-height:15px; background:url(//cdnimg.melon.co.kr/resource/image/web/common/icon_reg_date.png) no-repeat 0 0;}
+.list_timeline li .box_act .btn_text {position:absolute; right:19px; bottom:11px;}
+.list_timeline li .box_act .wrap_thumb.mhover {text-decoration:none;}
+.list_timeline li .box_act .cntt02 {position:relative; margin-bottom:15px; border:1px solid #d9d9d9; background-color:#fafafa;}
+.list_timeline li .box_act .cntt02 .shadow {display:block; position:absolute; bottom:-3px; left:0; width:100%; height:2px; background:url(//cdnimg.melon.co.kr/resource/image/web/common/box_act_shadow.png) no-repeat 0 0;}
+.list_timeline li .box_act .cntt02 .item01,
+.list_timeline li .box_act .cntt02 .item02,
+.list_timeline li .box_act .cntt02 .item03 {float:left;}
+
+.box_act .item01 {width:104px; height:104px;}
+.box_act .item02 {width:277px; height:104px; padding:0 12px; border-left:1px solid #d9d9d9;}
+.box_act .wrap_thumb {display:block; width:104px; height:104px; text-decoration:none; overflow:hidden;}
+.box_act .item02 dt {padding:19px 0 0; font-weight:bold; font-size:12px; line-height:14px; color:#1a1a1a;}
+:root .box_act .item02 dt {padding:17px 0 0\9;} /* IE9 */
+.box_act .item02 dt .ellipsis {display:inline-block; max-width:95%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.box_act .item02 dt .disabled {color:#999;}
+.box_act .item02 dd .ellipsis {display:block; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.box_act .item02 dd .ellipsis a {color:#666;}
+.box_act .item02 dd .wrap_more {position:absolute; top:0; right:4px;}
+.box_act .item02 dd .wrap_more {*top:-1px; *right:2px;} /* IE7 */
+.box_act .item02 dd .wrap_more .l_popup.small {top:-8px; left:17px;}
+.box_act .item02 dd .wrap_more .l_popup.small {*top:-7px; *left:19px;} /* IE7 */
+:root .box_act .item02 dd .wrap_more .l_popup.small {top:-9px\9;} /* IE9 */
+.box_act .item02 dd .btn_more02 {padding:1px 5px 2px 1px; font-size:0; line-height:0;}
+.box_act .item02 dd .btn_more02 {*padding:3px 5px 0 1px;} /* IE7 */
+.box_act .item02 dd .btn_more02 span {display:inline-block; width:4px; height:8px; background:url(//cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_vdo.png) no-repeat -137px 0; text-indent:-9999px; overflow:hidden;}
+.box_act .item02 dd .btn_more02 span {*font-size:0; *line-height:0; *text-indent:0;} /* IE7 */
+.box_act .item02 dd.atistname {position:relative; margin-top:1px; padding:0 18px 0 0; font-size:12px; line-height:14px; color:#1a1a1a;}
+.box_act .item02 dd.atistname.on {z-index:5;}
+
+.box_act .item02 dd.btn_play {margin:0;}
+.box_act .item02 dd.btn_play .songname12 {max-width:240px;}
+.box_act .item02 dd.wrap_join_fan {margin:13px 0 0;}
+
+.box_act .item_like {height:48px; padding:12px;}
+.box_act .item_like .atist_songinfo .wrap_thumb {display:inline-block; position:relative; width:48px; height:48px; text-decoration:none; overflow:hidden; vertical-align:middle;}
+.box_act .item_like .atist_songinfo .wrap_thumb .thumb_frame {display:block; position:absolute; top:0; left:0; width:48px; height:48px; background:url(//cdnimg.melon.co.kr/resource/image/web/common/thumb_frame_48.png) no-repeat 0 0;}
+.box_act .item_like .atist_songinfo a.wrap_thumb .thumb_frame {cursor:pointer;}
+.box_act .item_like .atist_songinfo .btn_icon.play {margin:0 9px 0 8px;}
+.box_act .item_like .atist_songinfo .atist_info {display:inline-block; *display:inline; width:280px; vertical-align:middle; *zoom:1;}
+.box_act .item_like .atist_songinfo .atist_info dt {padding:2px 0 0; font-weight:bold; font-size:12px; line-height:14px; color:#1a1a1a;}
+.box_act .item_like .atist_songinfo .atist_info dt .ellipsis {display:block; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.box_act .item_like .atist_songinfo .atist_info dd .ellipsis {display:block; width:100%; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;}
+.box_act .item_like .atist_songinfo .atist_info dd .ellipsis a {color:#666;}
+.box_act .item_like .atist_songinfo .atist_info dd .wrap_more {position:absolute; top:0; right:4px;}
+.box_act .item_like .atist_songinfo .atist_info dd .wrap_more {*top:-1px; *right:2px;} /* IE7 */
+.box_act .item_like .atist_songinfo .atist_info dd .wrap_more .l_popup.small {top:-8px; left:17px;}
+.box_act .item_like .atist_songinfo .atist_info dd .wrap_more .l_popup.small {*top:-7px; *left:19px;} /* IE7 */
+:root .box_act .item_like .atist_songinfo .atist_info dd .wrap_more .l_popup.small {top:-9px\9;} /* IE9 */
+.box_act .item_like .atist_songinfo .atist_info dd .btn_more02 {padding:1px 5px 2px 1px; font-size:0; line-height:0;}
+.box_act .item_like .atist_songinfo .atist_info dd .btn_more02 {*padding:3px 5px 0 1px;} /* IE7 */
+.box_act .item_like .atist_songinfo .atist_info dd .btn_more02 span {display:inline-block; width:4px; height:8px; background:url(//cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_vdo.png) no-repeat -137px 0; text-indent:-9999px; overflow:hidden;}
+.box_act .item_like .atist_songinfo .atist_info dd .btn_more02 span {*font-size:0; *line-height:0; *text-indent:0;} /* IE7 */
+.box_act .item_like .atist_songinfo .atist_info dd.atistname {position:relative; margin-top:5px; padding:0 18px 0 0; font-size:12px; line-height:14px; color:#1a1a1a;}
+.box_act .item_like .atist_songinfo .atist_info dd.atistname.on {z-index:5;}
+.box_act .cntt02.on {z-index:5;}
+/* 멜론 뮤직어워드 End */
+
+.photo_trend_list	{width:100%; overflow:hidden;}
+.photo_trend_list.best_section	{width:1004px; border:2px solid #e6e6e6; border-bottom:1px solid #ccc; margin:0 0 32px;}
+.photo_trend_list.best_section ul	{border-bottom:1px solid #e6e6e6; padding:24px 0 0 22px;}
+.photo_trend_list.best_section ul li	{height:374px; margin:0 24px 0 0;}
+.photo_trend_list ul	{width:110%; display:inline-block; vertical-align:top;}
+.photo_trend_list ul li	{float:left; height:255px; margin:0 22px 0 0;}
+
+/* 차트 상세 찾기 설명 */
+.find_detail_chart {margin:32px 0 0; padding:20px 24px 16px; border:1px solid #d9d9d9;}
+.find_detail_chart dl {color:#333; line-height:20px;}
+.find_detail_chart dl dt {margin:0 0 11px; color:#1a1a1a; font:bold 18px/1.2 "맑은 고딕", "Malgun Gothic",arial, dotum,"돋움", "Apple Gothic", sans-serif; letter-spacing:-1px;}
+.find_detail_chart dl dd.sumry strong {color:#7cb710;}
+.find_detail_chart dl dd ol li.find_detail_chart_li {width:836px; padding:15px 0 0; font:bold 16px/1.2 "맑은 고딕", "Malgun Gothic",arial, dotum,"돋움", "Apple Gothic", sans-serif; letter-spacing:-1px;}
+.find_detail_chart dl dd ol li.find_detail_chart_li:first-child {padding:23px 0 0;}
+.find_detail_chart dl dd ol li.find_detail_chart_li ul {padding:9px 0 0;}
+.find_detail_chart dl dd ol li.find_detail_chart_li ul li {line-height:20px;}
+.find_detail_chart dl dd ol li.find_detail_chart_li li {font:normal 12px/20px dotum,"돋움", "Apple Gothic", sans-serif; letter-spacing:0;}
+.find_detail_chart dl dd ol li.find_detail_chart_li ol {padding:9px 0 0;}
+.find_detail_chart dl .guide_image {display:inline-block; margin:10px 0 12px; vertical-align:top;}
+.find_detail_chart dl .guide_image img {vertical-align:top;}
+.find_detail_chart dl dd ol li.find_detail_chart_li hr {display:inline-block; height:1px; margin:16px 0 11px 0; background-color:#dbdbdb;}
+
+/* 시대별 차트 소개 */
+
+.history_tab > ul {position:relative; width:754px; border-top:2px solid #848484; border-bottom:1px solid #999; background-color:#ebf0ed;}
+.history_tab > ul {*zoom:1;}
+.history_tab > ul:after {content:""; display:block; clear:both; height:0; visibility:hidden;}
+.history_tab > ul > li {float:left; margin-left:1px;}
+.history_tab > ul > li > a {display:block; position:relative; margin-left:-1px; height:24px; padding:11px 0 0 0; border-left:1px solid #d9d9d9; color:#333; text-align:center;}
+.history_tab > ul > li > a {*zoom:1;}
+.history_tab > ul > li:first-child {margin-left:0;}
+.history_tab > ul > li:first-child > a {margin-left:0; border-left:0;}
+.history_tab > ul > li > .wrap_tab_cntt {display:none; margin-bottom:-1px; margin-left:-1px; border-top:1px solid #bababa; background-color:#fff;}
+.history_tab > ul > li > .wrap_tab_cntt > div {}
+
+.history_tab > ul > li.on > .wrap_tab_cntt {display:block;}
+.history_tab > ul > li.on > a {z-index:8; height:25px; margin-bottom:-1px; background-color:#fff; color:#6ea300; font-size:12px; line-height:15px; font-weight:bold;}
+
+.history_tab.type03 > ul > li {width:250px;}
+.history_tab.type03 > ul > li.on {width:252px;}
+
+.history_tab.type03 > ul > li > .wrap_tab_cntt {width:754px;}
+.history_tab.type03 > ul > li > .wrap_tab_cntt.cntt01 {margin-left:0;}
+.history_tab.type03 > ul > li > .wrap_tab_cntt.cntt02 {margin-left:-251px;}
+.history_tab.type03 > ul > li > .wrap_tab_cntt.cntt03 {margin-left:-502px;}
+
+.box_gray {padding:15px; border:2px solid #e6e6e6;}
+
+.histroy_chart {border-top:2px solid #666; color:#333;}
+.histroy_chart > li {border-bottom:1px solid #e6e6e6;}
+.histroy_chart .cntt > dt {display:inline-block; width:78px; padding-left:13px; font-weight:bold; font-size:16px; line-height:1.2em; font-family:"맑은 고딕", "Malgun Gothic", "돋움", Dotum, "Apple Gothic", sans-serif; vertical-align:middle;}
+.histroy_chart .cntt > dt {*display:inline;}
+.histroy_chart .cntt > dd {display:inline-block; width:622px; margin:16px 0; padding:0 15px; border-left:1px solid #ccc; line-height:1.6em; vertical-align:middle;}
+.histroy_chart .cntt > dd {*display:inline; *zoom:1;}
+
+.bg_histroy_chart02 {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_histroy_chart02.png) no-repeat right bottom;}
+.bg_histroy_chart03 {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_histroy_chart03.png) no-repeat right bottom;}
+
+.box_prfe {margin-left:7px; border-left:2px solid #ccc;}
+.box_prfe > li {margin-top:8px; margin-left:-9px; padding-left:34px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_prfe.png) no-repeat left top;}
+.box_prfe > li {*zoom:1;} /* ie7 */
+.box_prfe > li:first-child {margin-top:0;}
+.box_prfe > li > dl {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_prfe01.png) repeat-y left top; border:1px solid #e6e6e6; border-left:0;}
+.box_prfe > li > dl > dt {display:inline-block; padding:0 20px; color:#333; font-size:20px; line-height:1.4em; font-family:"맑은 고딕", "Malgun Gothic", "돋움", Dotum, "Apple Gothic", sans-serif; vertical-align:middle;}
+.box_prfe > li > dl > dt {*display:inline; *zoom:1;}
+.box_prfe > li > dl > dt span {font-family:Arial, "Apple Gothic", sans-serif; vertical-align:-2px;}
+.box_prfe > li > dl > dd {display:inline-block; min-height:16px; padding:17px 24px 13px; border-left:1px solid #e6e6e6; background-color:#fff; font-size:11px; line-height:25px; vertical-align:middle;}
+.box_prfe > li > dl > dd {*display:inline; *zoom:1;}
+
+.box_prfe.type02 > li > dl > dt {min-width:126px;}
+
+.box_prfe .prfe {padding-left:100px;}
+.box_prfe .prfe {*zoom:1;}
+.box_prfe .prfe:after {content:""; display:block; clear:both; height:0; visibility:hidden;}
+.box_prfe .prfe dt {float:left; margin-left:-100px; color:#333; font-size:12px;}
+
+/* 시대별차트 메뉴 */
+.wrap_chart_year {position:relative; width:1008px; height:152px; margin-top:24px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_year_chart_170123.png) no-repeat 0 0;}/* 170123 수정 */
+.wrap_chart_year .menu_year {zoom:1; height:152px; margin-left:38px; vertical-align:bottom;}/* 170123 수정 */
+.wrap_chart_year .menu_year li {position:relative; display:inline-block; float:left; width:131px; height:152px; margin-left:-1px;}
+.wrap_chart_year .menu_year li.nth0 {width:39px;}
+.wrap_chart_year .menu_year li.nth1 {margin-left:0;}
+.wrap_chart_year .menu_year li.nth7 {width:99px;}/* 170123 수정 */
+.wrap_chart_year .menu_year li.nth7.no_result {width:54px;}/* 170123 수정 */
+.wrap_chart_year .menu_year li.nth8 {width:72px;}
+.wrap_chart_year .menu_year li h3 {position:absolute; z-index:10; top:8px; left:0; margin-left:-13px; color:#fff; font-size:12px; font-weight:bold; line-height:16px;}
+.wrap_chart_year .menu_year li h3.tab01 {left:0;}
+
+/*.wrap_chart_year .menu_year li h3 a {}*/
+/*.wrap_chart_year .menu_year li h3 a span {font-size:15px; font-family:Arial; vertical-align:-1px;}*/
+.wrap_chart_year .menu_year .dtl_year {height:152px;}
+.wrap_chart_year .menu_year .dtl_year dl {height:152px;}
+.wrap_chart_year .menu_year .dtl_year dt {clear:both; height:80px;}
+.wrap_chart_year .menu_year .dtl_year dt a {display:block; width:129px; height:80px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_artist_kpop.png) no-repeat 0 0; font-size:0; line-height:0;}
+.wrap_chart_year .menu_year .dtl_year dt.on a,
+.wrap_chart_year .menu_year .dtl_year dt a:hover {position:relative; width:131px; background-position: -131px 0;text-decoration:none}
+.wrap_chart_year .menu_year li.nth1 .dtl_year dt a {background: none;}
+.wrap_chart_year .menu_year li.nth2 .dtl_year dt a {background-position: 0 0;}
+.wrap_chart_year .menu_year li.nth2 .dtl_year dt.on a,
+.wrap_chart_year .menu_year li.nth2 .dtl_year dt a:hover {background-position: -131px 0;}
+.wrap_chart_year .menu_year li.nth3 .dtl_year dt a {background-position: 0 -80px;}
+.wrap_chart_year .menu_year li.nth3 .dtl_year dt.on a,
+.wrap_chart_year .menu_year li.nth3 .dtl_year dt a:hover {background-position: -131px -80px;}
+.wrap_chart_year .menu_year li.nth4 .dtl_year dt a {background-position: 0 -160px;}
+.wrap_chart_year .menu_year li.nth4 .dtl_year dt.on a,
+.wrap_chart_year .menu_year li.nth4 .dtl_year dt a:hover {background-position: -131px -160px;}
+.wrap_chart_year .menu_year li.nth5 .dtl_year dt a {background-position: 0 -240px;}
+.wrap_chart_year .menu_year li.nth5 .dtl_year dt.on a,
+.wrap_chart_year .menu_year li.nth5 .dtl_year dt a:hover {background-position: -131px -240px;}
+.wrap_chart_year .menu_year li.nth6 .dtl_year dt a {background-position: 0 -320px;}
+.wrap_chart_year .menu_year li.nth6 .dtl_year dt.on a,
+.wrap_chart_year .menu_year li.nth6 .dtl_year dt a:hover {background-position: -131px -320px;}
+
+.wrap_chart_year .menu_year.pop .dtl_year dt a {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_artist_pop.png) no-repeat 0 0;}
+.wrap_chart_year .menu_year.pop li.nth1 .dtl_year dt a {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_artist_pop.png) no-repeat 0 0;}
+.wrap_chart_year .menu_year.pop li.nth1 .dtl_year dt.on a,
+.wrap_chart_year .menu_year.pop li.nth1 .dtl_year dt a:hover {background-position: -131px 0;}
+.wrap_chart_year .menu_year.pop li.nth2 .dtl_year dt a {background-position: 0 -80px;}
+.wrap_chart_year .menu_year.pop li.nth2 .dtl_year dt.on a,
+.wrap_chart_year .menu_year.pop li.nth2 .dtl_year dt a:hover {background-position: -131px -80px;}
+.wrap_chart_year .menu_year.pop li.nth3 .dtl_year dt a {background-position: 0 -160px;}
+.wrap_chart_year .menu_year.pop li.nth3 .dtl_year dt.on a,
+.wrap_chart_year .menu_year.pop li.nth3 .dtl_year dt a:hover {background-position: -131px -160px;}
+.wrap_chart_year .menu_year.pop li.nth4 .dtl_year dt a {background-position: 0 -240px;}
+.wrap_chart_year .menu_year.pop li.nth4 .dtl_year dt.on a,
+.wrap_chart_year .menu_year.pop li.nth4 .dtl_year dt a:hover {background-position: -131px -240px;}
+.wrap_chart_year .menu_year.pop li.nth5 .dtl_year dt a {background-position: 0 -320px;}
+.wrap_chart_year .menu_year.pop li.nth5 .dtl_year dt.on a,
+.wrap_chart_year .menu_year.pop li.nth5 .dtl_year dt a:hover {background-position: -131px -320px;}
+.wrap_chart_year .menu_year.pop li.nth6 .dtl_year dt a {background-position: 0 -400px;}
+.wrap_chart_year .menu_year.pop li.nth6 .dtl_year dt.on a,
+.wrap_chart_year .menu_year.pop li.nth6 .dtl_year dt a:hover {background-position: -131px -400px;}
+
+
+.wrap_chart_year .menu_year .dtl_year dd {float:left; margin-top:17px; width:12px; height:37px; margin-left:1px }
+.wrap_chart_year .menu_year .dtl_year dd a {display:block; z-index:3; width:12px; height:37px; margin-right:-1px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_artist_bar.png) no-repeat 0 0; font-size:0; line-height:0;}
+.wrap_chart_year .menu_year .dtl_year dd span {display:block; width:12px; height:37px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_artist_bar.png) no-repeat 0 0; font-size:0; line-height:0;}
+.wrap_chart_year .menu_year .dtl_year dd.on a,
+.wrap_chart_year .menu_year .dtl_year dd a:hover {position: relative; width:18px; height:49px; margin-top:-6px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_artist_bar.png) no-repeat -32px -1px;}
+.wrap_chart_year .menu_year .dtl_year dt span {display:block; width:100%; height:80px; font-size:0; line-height:0;}
+.wrap_chart_year .menu_year li.on	.dtl_year {display:block;}
+.wrap_chart_year .menu_year.hover .dtl_year dd.on a em,
+.wrap_chart_year .menu_year .dtl_year dd a em {display:none; position:absolute; bottom:-11px; left:-7px; color:#91d7f5; font-size:12px; line-height:16px; font-weight:bold;}
+.wrap_chart_year .menu_year .dtl_year dd.on a em,
+.wrap_chart_year .menu_year.hover .dtl_year dd.on a:hover em,
+.wrap_chart_year .menu_year .dtl_year dd a:hover em {display:block;}
+
+.wrap_chart_year .menu_year li.nth7 .dtl_year dd {font-size:0; line-height:0}
+
+.wrap_chart_year .menu_year li.on h3 a {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/tab_year_on.png) no-repeat 0 0; color:#333; font-weight:bold;}
+.wrap_chart_year .menu_year li.on h3.tab07 a {background-position:-155px 0;}
+
+.wrap_chart_year .type {position:absolute; top:9px; left:13px;margin-top:-4px;}/* 170123 수정 */
+.wrap_chart_year .type li {color:#b5b5b5; font-size:11px; line-height: 15px; letter-spacing:-1px;}
+.wrap_chart_year .type .icon_bar {display:inline-block; width:7px; height:7px; margin:3px 5px 0 0; background:#8db313; font-size:0; line-height:0; vertical-align:top}/* 170123 수정 */
+.wrap_chart_year .type .icon_bar.pop {background:#ff9145;}
+/* 140404_lds */
+.wrap_chart_year .menu_year .dtl_year dd span.icon_bar {display:block; width:10px; height:12px; margin:13px 0 0 1px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_artist_bar.png) no-repeat -14px -60px;}
+.wrap_chart_year .menu_year .dtl_year dd span.icon_bar.pop {margin-top:25px; background-position: 0 -60px;}
+.wrap_chart_year .menu_year .dtl_year dd a span.icon_bar { position:absolute;}/* 140404_lds */
+.wrap_chart_year .menu_year .dtl_year dd a:hover span.icon_bar,
+.wrap_chart_year .menu_year .dtl_year dd.on a span.icon_bar{display:none;}
+
+
+/*.wrap_chart_year .dtl_year dt {float:left; margin-right:13px; padding:0 20px 0 0; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/icon_years_arr.png) no-repeat right 6px;}
+.wrap_chart_year .dtl_year dt a,
+.wrap_chart_year .dtl_year dt > span {display:block; height:17px; color:#333; font-size:14px; line-height:17px; font-family:"맑은 고딕","Malgun Gothic"; text-decoration:none;}
+.wrap_chart_year .dtl_year dt a.mhover {margin-bottom:-1px; border-bottom:1px solid #333;}
+.wrap_chart_year .dtl_year dt a span,
+.wrap_chart_year .dtl_year dt > span span{font-size:15px; font-family:Arial; vertical-align:-1px;}
+.wrap_chart_year .dtl_year dt.on a {font-weight:bold; text-decoration:none; border-bottom:1px solid #333;}
+.wrap_chart_year .dtl_year dd {float:left; padding:1px 14px 0 16px;; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_dgray_bar.png) no-repeat 0 5px;}
+.wrap_chart_year .dtl_year dd.first {background:none; }
+.wrap_chart_year .dtl_year dd a {color:#333; font-size:12px; line-height:14px;}
+.wrap_chart_year .dtl_year dd.on a {font-weight:bold; text-decoration:underline;}*/
+
+.chic_music_awards {padding:0 0 8px;}
+.chic_music_awards .btn_base02 {*height:26px; *margin-left:4px;}
+
+/* 시대별 차트 전체보기 */
+.box_year_info {position:relative; min-height:75px; margin-top:24px; padding:14px 171px 14px 108px; border:2px solid #e6e6e6;}
+.box_year_info .image {position:absolute; top:14px; left:14px; width:75px; height:75px;}
+.box_year_info .image .thumb_frame {position:absolute; top:0; left:0; width:75px; height:75px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_frame_75.png) no-repeat 0 0;}
+.box_year_info dt {color:#333; font-weight:bold; font-size:18px; line-height:21px; font-family:"맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif;}
+.box_year_info dt {*margin-top:-3px;}
+.box_year_info dt span {font-size:21px; line-height:21px; font-family:Arial, "Apple Gothic", sans-serif; vertical-align:-2px;}
+.box_year_info dd.desc {margin-top:1px; color:#333; font-size:18px; line-height:22px; font-family:"맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif; letter-spacing:-1px;}
+.box_year_info dd.desc {*margin-top:8px;}
+.box_year_info dd.btn_vw {position:absolute; top:50%; right:32px; margin-top:-22px;}
+
+.list_year_all {margin-top:32px; border-top:1px solid #e5e5e5; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/line_year_all.png) repeat 0 0;}
+.list_year_all li {float:left; width:50%; height:83px;}
+.list_year_all li.bg_bar {background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_year_bar.png) no-repeat 0 8px;}
+.list_year_all li .wrap_cntt {position:relative; min-height:50px; padding:16px 16px 17px 78px;}
+.list_year_all .image {position:absolute; top:16px; left:16px; width:50px; height:50px;}
+.list_year_all .image .thumb_frame {position:absolute; top:0; left:0; width:50px; height:50px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_frame_50.png) no-repeat 0 0;}
+.list_year_all dt {margin-top:2px; color:#333; font-weight:bold; font-size:12px; line-height:14px;}
+.list_year_all dd.desc {margin-top:3px; color:#666; font-size:11px; line-height:14px;}
+.list_year_all dd.desc a {color:#666;}
+
+/* 시대별 차트 컨텐츠 */
+.cntt_chart_year {}
+.cntt_chart_year:after {content:""; display:block; clear:both; height:0; visibility:hidden;}
+.cntt_chart_year .cont_dtl {word-wrap:break-word; word-break:break-all;}
+.cntt_chart_year .cont_side {float:left; width:240px; margin:0 0 0 32px;}
+
+
+.award_notice {margin:20px 0 34px 0;font-size:11px; color:#999999;}
+.award_year{overflow:hidden;}
+.award_year .chic_music_awards{float:left;width:240px;}
+
+/* 140425_수정 aty */
+.award_year .chic_music_awards ul {border-top:1px solid #9c9c9c;}
+.award_year .chic_music_awards ul li{border-bottom:1px solid #eceeef; font-size:0;line-height:0;vertical-align:top;}
+.award_year .chic_music_awards ul li a{overflow:hidden;display:block;height:41px;}
+.award_year .chic_music_awards ul li.on a,
+.award_year .chic_music_awards ul li a:hover{display:block;height:98px; border:none;margin:-1px 0;}
+.award_year .chic_music_awards ul li.on a img,
+.award_year .chic_music_awards ul li a:hover img{margin-top:-41px;}
+.award_year .cntt_chart_year{float:left;width:736px;margin-left:32px;}
+/* //140425_수정 aty */
+
+.list_sumrydesc {border:1px solid #d9d9d9;}
+.list_sumrydesc li {border-top:1px solid #d9d9d9; background-color:#fff;}
+.list_sumrydesc li a {display:block; position:relative; height:49px; padding:13px 12px 12px; text-decoration:none;}
+.list_sumrydesc li a img {position:absolute; top:12px; left:12px;}
+.list_sumrydesc li a strong {display:block; margin:0 0 3px 58px; color:#333; font-size:12px; line-height:14px;}
+.list_sumrydesc li a .desc {display:block; margin:0 0 0 58px; color:#666; font-size:11px; line-height:16px; letter-spacing:-1px;}
+.list_sumrydesc li a .desc span {margin-left:2px; letter-spacing:0;}
+.list_sumrydesc li a .thumb_frame {display:block; position:absolute; top:12px; left:12px; width:50px; height:50px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_frame_50.png) no-repeat 0 0;}
+
+.list_sumrydesc li a.mhover .desc {text-decoration:underline;}
+
+.list_sumrydesc li.first {border-top:none;}
+.list_sumrydesc li.first .tit_years {padding:8px 0 9px 12px; color:#1a1a1a; font-weight:bold; font-size:14px; line-height:20px; font-family:"맑은 고딕","Malgun Gothic", "Apple Gothic", sans-serif; letter-spacing:-1px;}
+.list_sumrydesc li.first .tit_music_awards {height:80px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_music_awards.png) no-repeat 0 0;}
+.list_sumrydesc li.first a {height:66px; padding:9px 12px 12px;}
+.list_sumrydesc li.first a img {position:absolute; top:0; left:12px;}
+.list_sumrydesc li.first a strong {display:block; margin:0 0 0 83px;}
+.list_sumrydesc li.first a .desc {display:block; margin:0 0 0 83px; color:#000; font-weight:bold; font-size:12px; line-height:15px; letter-spacing:0;}
+.list_sumrydesc li.first a .thumb_frame {top:0; left:12px; width:75px; height:75px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_frame_75.png) no-repeat 0 0;}
+
+.list_sumrydesc li.on {background-color:#f7f7f7;}
+
+.btn_big.chart {margin:0;}
+.btn_big.chart > span > span {min-width:210px; color:#333; font-weight:normal; font-size:11px;}
+.btn_big.chart .icon {width:11px; height:11px; background:url(//cdnimg.melon.co.kr/resource/image/web/common/bg_btn_icon.png) no-repeat -321px top; vertical-align:-2px;}
+.btn_big.chart .icon {*margin-right:4px; *vertical-align:middle;} /* ie7 */
+
+/* 시대별 차트 TOP100*/
+/*.cntt_chart_year .tb_list.type02 .ellipsis.rank01 {max-width:240px;}*/
+/* .cntt_chart_year .tb_list.type02 .ellipsis.rank02 {max-width:100px;} */ /* 140519_삭제 aty */
+/*.cntt_chart_year .tb_list.type02 .ellipsis.rank03 {max-width:100px;}*/
+/*.cntt_chart_year .tb_list.type02 .wrap_song_info {width:240px !important;}*/
+
+/* 시대별 차트 리뷰 */
+.wrap_age_rvew {clear:both;}
+.wrap_age_rvew h3 {padding:25px 0 12px; color:#1a1a1a; font-weight:bold; font-size:18px; line-height:24px; font-family:"맑은 고딕", "Malgun Gothic","돋움", Dotum,"Apple Gothic",sans-serif; letter-spacing:-1px;}
+.wrap_age_rvew .wrap_rvew {}
+
+/*
+********************
+* 컬럼영역 CSS 시작
+********************
+*/
+
+div.ageColumnWrap {clear:both; font-family:"Apple Gothic", sans-serif;}
+/*div.ageConTxtBox { float:right;  width:737px;}*/
+
+/* songTable */
+div.ageConTxtBox div.recommendList {clear:both; margin:0; padding-bottom:22px;}
+div.ageConTxtBox div.recommendList .tb_list td {height:39px;}
+div.ageConTxtBox div.recommendList div.btnList {margin:0;}
+div.ageConTxtBox div.recommendList .btnList p {color: #666; font-size: 11px; line-height:13px; padding-top:7px;}
+
+/* point */
+span.agebox {display:block; padding-bottom:10px;}
+span.ageUnderLine {text-decoration:underline;}
+.pointColorPop {color:#ff0000;}
+.pointColorKPop {color:#8db312;}
+
+/* etc */
+.ageTxtb{font-weight:bold;}
+.ageClear {clear:both;}
+
+.agePbTit {padding-bottom:30px !important;}
+.agePb15 {padding-bottom:10px;}
+.agePb25 {padding-bottom:25px;}
+.agePb35 {padding-bottom:35px;}
+.agePl17 {padding-left:17px;}
+
+.chartTxtAge {display:block; padding-bottom:25px; color:#333; text-align:right;}
+.chartTxtAge strong {color:#739900; text-decoration:underline;}
+.chartTxtAge img {vertical-align:middle; padding-left:7px;}
+.chartTxtAge strong.ic {background:none; text-decoration:none;}
+
+/* 문단 */
+p.ageCalromTxt1 {float:left; padding:19px 22px; margin-bottom:27px; color:#4e4e4e; text-align:justify; border:1px solid #e2e2e2; background:#f7f7f7;}
+span.smallTxtAge {display:block; padding-top:20px; color:#717171; font-size:11px;}
+
+/* 이미지 */
+/* span.calName {clear:both; display:block; padding-top:10px; text-align:right;} */
+span.calName {clear:both; display:block; padding-top:20px; text-align:right;}
+
+/* 타이틀 */
+h4.ageTitIcon1 {clear:both; height:22px; padding:0 0 16px 0; font-size:18px; line-height:22px; font-weight:bold; color:#1a1a1a; background:none; font-family:"맑은 고딕","Malgun Gothic","Apple Gothic", sans-serif; letter-spacing:-1px;}
+h4.ageTitIcon2 {clear:both; height:22px; margin-top:2px; padding:0 0 16px 0; font-size:18px; line-height:22px; font-weight:bold; color:#323232; background:none; font-family:"맑은 고딕","Malgun Gothic","Apple Gothic", sans-serif; letter-spacing:-1px;}
+
+/* 시대별 컬럼 */
+dl.age_chartType1 {clear:both; padding-bottom:19px; }
+dl.age_chartType1.ageNone {padding-bottom:0;}
+dl.age_chartType1.tpB {padding-bottom:35px;}
+dl.age_chartType1 dt {padding-bottom:10px; color:#1a1a1a; font-size:14px; line-height:16px;}
+dl.age_chartType1 dd.post1 {color:#666; text-align:justify !important;}
+dl.age_chartType1 dd.post2 {padding-bottom:10px; color:#666; text-align:justify !important;}
+dl.age_chartType1 dd.imgPos1 {padding-bottom:14px;}
+dl.age_chartType1 dd.imgPos1 img {width:737px;} /* 131114 added */
+dl.age_chartType1 dd.imgPos2 {padding-top:10px;}
+dl.age_chartType1 dd.imgPos3 {padding-bottom:14px;}/*150202 추가 lyr*/
+dl.age_chartType1 dd.imgTit1 {padding-top:3px; text-align:center; color:#aaa; font-size:11px;}
+dl.age_chartType1 dd.imgTit2 {padding-top:3px; text-align:right; color:#aaa; font-size:11px;}
+dl.age_chartType1 dd.imgTit3 {padding-top:3px; text-align:left; color:#aaa; font-size:11px;}
+dl.age_chartType1 dd.subTit1 {padding-bottom:3px; }
+
+dl.age_chartType2 {clear:both; width:674px; padding-bottom:25px; }
+dl.age_chartType2 dt {padding-bottom:10px; color:#4e4e4e; font-weight:bold; text-decoration:underline; font-size:13px;}
+dl.age_chartType2 dd {text-align:justify !important;}
+dl.age_chartType2 dd ul li {color:#666 !important; padding-bottom:4px;}
+dl.age_chartType2 dd ul li.bt {padding-bottom:0; font-size:11px;}
+
+dl.age_chartType3 {clear:both; float:left; width:674px; padding-bottom:25px; }
+dl.age_chartType3.pbB {padding-bottom:35px;}
+dl.age_chartType3 dt {padding-bottom:10px; color:#1a1a1a; font-size:14px; line-height:16px;}
+dl.age_chartType3 dd {color:#666; text-align:justify !important;}
+dl.age_chartType3 dd.txtL {float:left;}
+dl.age_chartType3 dd.imgsR {float:right;}
+
+
+/* 의견쓰기 */
+div.replyAgeWrite {clear:both; float:left; width:100%; height:48px; background:url(//cdnimg.melon.co.kr/resource/image/web/chart/bg_columnist.png) no-repeat left top;}
+div.replyAgeWrite span.tit {display:block; float:left; zoom:1; padding:17px 0 0 51px; color:#1a1a1a; font-weight:bold; font-size:14px; line-height:16px;}
+div.replyAgeWrite span.btn {display:block; float:right; padding:12px 12px 0 0;}
+
+/* 닫기 */
+div.ageConTxtBoxBtn {margin-top:20px; height:38px; padding-top:4px; text-align:right; border-top:1px solid #d9d9d9; background:none;}
+
+/* 어워드 */
+h4.awardTit {clear:both; width:100%; padding-bottom:12px; padding-top:5px; border-bottom:3px solid #c1c1c1;}
+
+h4.awardTit1 {clear:both; width:100%; padding-bottom:12px; padding-top:5px; border-bottom:3px solid #c1c1c1; overflow:hidden;}
+h4.awardTit1 span.tit {display:block; float:left;}
+h4.awardTit1 span.btn {display:block; float:right; padding-top:3px;}
+
+h4.awardTit2 {clear:both; height:22px; padding:0 0 6px 0; font-size:18px; line-height:22px; font-weight:bold; color:#1a1a1a; background:none; font-family:"맑은 고딕","Malgun Gothic","Apple Gothic", sans-serif; letter-spacing:-1px;}
+h4.awardTit2 span.tit {margin-left:10px; color:#333; font-weight:normal; font-size:12px; line-height:14px; font-family:Dotum,"Apple Gothic", sans-serif; letter-spacing:0;}
+
+h4.awardTit3 {clear:both; height:22px; padding:0 0 13px 0; font-size:18px; line-height:22px; font-weight:bold; color:#1a1a1a; background:none; font-family:"맑은 고딕","Malgun Gothic","Apple Gothic", sans-serif; letter-spacing:-1px;}
+
+div.fullBox1 {clear:both; width:100%; padding:10px 0 10px 30px; overflow:hidden;}
+div.fullBox1 span.tit {display:block; float:left; padding-top:3px;}
+div.fullBox1 span.btn {display:block; float:right;}
+
+div.fullBox2 {clear:both; width:100%; padding:0 0 23px 30px; overflow:hidden;}
+div.fullBox2 dl {float:left; padding-right:9px;}
+div.fullBox2 dl.nopd {padding-right:0;}
+div.fullBox2 dl dd {padding-bottom:10px;}
+div.fullBox2 dl dd img {width:151px; height:101px; border:5px solid #313131;}
+
+div.fullBox3 {clear:both; width:100%; padding-bottom:25px; padding-left:30px;}
+
+div.fullBox4 {clear:both; width:100%; padding:0 0 23px 0; overflow:hidden;}
+div.fullBox4 dl {float:left; padding-right:13px;}
+div.fullBox4 dl.nopd {padding-right:0;}
+div.fullBox4 dl dd {padding-bottom:10px;}
+div.fullBox4 dl dd img {width:196px; height:148px; border:9px solid #000000;}
+
+div.fullBox5 {clear:both; width:100%; margin-bottom:34px;}
+div.fullBox5 div.videoList1 {border-bottom:1px solid #ebebeb; height:160px; margin-top:10px;}
+div.fullBox5 div.videoList1 span {width:220px; display:block; float:left; padding-right:17px;}
+div.fullBox5 div.videoList1 dl {float:left; width:420px;}
+div.fullBox5 div.videoList1 dl dt {padding-top:3px; font-weight:bold; font-size:14px; color:#000;}
+div.fullBox5 div.videoList1 dl dd {padding-top:5px; line-height:18px;}
+
+div.fullBox5 div.videoList2 {height:160px; margin-top:16px;}
+div.fullBox5 div.videoList2 span {width:220px; display:block; float:left; padding-right:17px;}
+div.fullBox5 div.videoList2 dl {float:left; width:420px;}
+div.fullBox5 div.videoList2 dl dt {padding-top:3px; font-weight:bold; font-size:14px; color:#000;}
+div.fullBox5 div.videoList2 dl dd {padding-top:5px; line-height:18px;}
+
+dl.awardCon {position:relative; width:100%; padding-bottom:25px; overflow:hidden;}
+dl.awardCon dt {padding:9px 0 7px 0; font-weight:bold; font-size:14px; color:#1a1a1a;font-family:"Apple Gothic", sans-serif;}
+dl.awardCon dd.post1 {color:#666; text-align:justify !important;}
+dl.awardCon dd.post2 {padding-bottom:10px; color:#666; text-align:justify !important;}
+dl.awardCon dd.post3 {padding-top:15px; color:#666; text-align:justify !important;}
+dl.awardCon dd.post4 {color:#666; text-align:justify !important;}
+
+dl.awardCon dd.imgTit1 {padding-top:3px; text-align:center; color:#aaa; font-size:11px;}
+dl.awardCon dd.imgPos1 {padding-bottom:10px;}
+dl.awardCon dd.imgPos1 img {width:737px;} /* 131114 added */
+dl.awardCon dd.mvBtn {position:absolute; right:0; top:10px;}
+
+div.topBox {clear:both; width:100%; padding-bottom:15px; overflow:hidden;}
+div.topBox dl.topBox10 {float:left; width:131px; padding:10px 0;}
+div.topBox dl.topBox10.pr {padding-right:20px;}
+div.topBox dl.topBox10 dt {font-weight:bold; padding-top:4px; color:#787878; text-align:left;}
+div.topBox dl.topBox10 dd {position:relative;}
+div.topBox dl.topBox10 dd span {position:absolute; left:10px; top:0;}
+div.topBox dl.topBox10 dd a img {width:122px; height:122px; border:4px solid #66339d;}
+
+div.topBox dl.topBox10_2011 {float:left; width:118px; padding:10px 0;}
+div.topBox dl.topBox10_2011.pr {padding-right:21px;}
+div.topBox dl.topBox10_2011 dt {font-weight:bold; padding-top:4px; color:#787878; text-align:left;}
+div.topBox dl.topBox10_2011 dd {position:relative;}
+div.topBox dl.topBox10_2011 dd span {position:absolute; left:10px; top:0;}
+div.topBox dl.topBox10_2011 dd a img {width:112px; height:112px; border:3px solid #66339d;}
+
+div.topBox dl.topBox10_2012 {float:left; width:118px; padding:10px 0;}
+div.topBox dl.topBox10_2012.pr {padding-right:21px;}
+div.topBox dl.topBox10_2012 dt {font-weight:bold; padding-top:4px; color:#8a8a8a; text-align:left;}
+div.topBox dl.topBox10_2012 dd {position:relative;}
+div.topBox dl.topBox10_2012 dd span {position:absolute; left:10px; top:0;}
+div.topBox dl.topBox10_2012 dd a img {width:112px; height:112px; }
+
+div.stillBox {clear:both; width:100%; padding:15px 0 25px 0; overflow:hidden;}
+
+.cont_dtl.music_awards div.ageColumnWrap div.ageTopImg {font-size:0; line-height:0;} /* 140425_수정 aty */
+.cont_dtl div.ageColumnWrap div.ageTopImg {position:relative; margin-bottom:24px; border:1px solid #bfbfbf; background-color:#edf2f6;}
+.cont_dtl div.ageColumnWrap div.ageTopImg .btn_view {position:absolute; bottom:7px; right:7px;}
+.cont_dtl div.ageColumnWrap div.ageTopImg .btn_view img {vertical-align: top;}
+.summ_prid button.pre,.summ_prid button.next {z-index:1} /* 140113 kiok add */
+.summ_prid .year_list {position:absolute; top:19px; right:0;}
+.summ_prid .year_list .select_wrap {margin-left:4px;}
+/*
+********************
+* 컬럼영역 CSS 끝
+********************
+*/
+/*160108 추가 lyr*/
+.tb_list.type02 tr.recommend_type td {border-bottom: 1px solid #93dbcf;}
