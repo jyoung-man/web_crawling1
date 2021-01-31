@@ -11,7 +11,7 @@ import requests
 import sqlite3
 import re
 import time
-from bs4 import BeautifulSoup  #https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+from bs4 import BeautifulSoup  #refecence: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 
 
     
@@ -34,7 +34,6 @@ def get_dept_code():
     sc, fc = get_url_contents(url)
     parse = BeautifulSoup(fc, 'html.parser')
     depts = parse.find_all("select", {"name": "openSust"}) 
-    
     dept = []
     code = []
 
@@ -48,15 +47,14 @@ def get_dept_code():
     code_num = code_num[1:]
     dept_name = dept_name[3:-1]
     i = 0
+    
     for n in dept_name:
         cur = con.cursor()
         cur.execute('INSERT INTO dept VALUES(:d_name, :d_code);', {"d_name":n, "d_code":code_num[i]})
         i+=1
-
     con.commit()
-    #cur.execute('SELECT name FROM dept where d_code = 126897 ')
-    #print(cur.fetchall())
     return code_num
+
 def make_sugang_db(code):
     con = sqlite3.connect('./iku.db')
     cur = con.cursor()
