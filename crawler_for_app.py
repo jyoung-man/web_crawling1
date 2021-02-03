@@ -26,9 +26,9 @@ def get_url_contents(url):
             s.close()
             
 def get_dept_code():
-    con = sqlite3.connect('./iku.db')
+    con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
-    cur.execute("DROP TABLE dept;")
+    #cur.execute("DROP TABLE dept;")
     cur.execute("CREATE TABLE dept(d_name text, d_code text);")
     url = 'https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011'
     sc, fc = get_url_contents(url)
@@ -56,9 +56,9 @@ def get_dept_code():
     return code_num
 
 def make_sugang_db(code):
-    con = sqlite3.connect('./iku.db')
+    con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
-    cur.execute("DROP TABLE lecture;")
+    #cur.execute("DROP TABLE lecture;")
     cur.execute("CREATE TABLE lecture(type text, l_number text, l_name text, credit integer, d_code text, time text, prof text);")
     url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011"
     for c in code:
@@ -91,9 +91,9 @@ def make_sugang_db(code):
     
 if __name__ == '__main__':
 
-    #code = get_dept_code()
-    #make_sugang_db(code)
-    con = sqlite3.connect('./iku.db')
+    code = get_dept_code()
+    make_sugang_db(code)
+    con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
     cur.execute('SELECT * FROM lecture where d_code = 127428')
     print(cur.fetchone())
