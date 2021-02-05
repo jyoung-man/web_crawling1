@@ -52,6 +52,11 @@ def get_dept_code():
         cur = con.cursor()
         cur.execute('INSERT INTO dept VALUES(:d_name, :d_code);', {"d_name":n, "d_code":code_num[i]})
         i+=1
+    
+    delete = ["105291", "105321", "126784", "127320", "105541", "105561", "105591", "126905", "126777", "121012", "103391", "122056", "122053", "122054", "122410", "122412", "122058", "122062", "122096", "120806", "120809", "122098", "122099", "126791", "122097", "103013", "102931", "127425", "103851", "103901", "121218", "126790", "126782", "103912", "103911", "126793", "122048", "122102", "122101", "122100", "126792", "122104", "104601", "122103", "104581", "121242", "121243", "121244", "126779", "105441", "105451", "126778", "103741", "126788", "103681", "127109", "126789", "103731", "120933", "127114", "127113", "121134", "121136", "126785", "103271", "126902", "122216", "003221", "126901", "127117", "127117", "122227", "126904", "121263", "122405", "122080", "122409", "126799", "122407", "122408", "105251", "103751", "105611", "127116", "122071"]
+    for d in delete:
+        cur = con.cursor()
+        cur.execute('DELETE FROM dept WHERE d_code = "{}";'.format(d))
     con.commit()
     return code_num
 
@@ -73,6 +78,10 @@ def make_sugang_db(code):
         time.sleep(2)
         for t in datas[1:]:
             data = t.text.split('\n')
+            k_lecture = data[5].split('(')
+            data[5] = k_lecture[0]
+            _prof = data[11].split(',')
+            data[11] = _prof[0]
             cur = con.cursor()
             cur.execute("INSERT INTO lecture VALUES(:type, :l_number, :l_name, :credit, :d_code, :time, :prof);", {"type":data[3], "l_number":data[4], "l_name":data[5], "credit":data[7], "d_code":c , "time":data[10], "prof":data[11]})
             '''
@@ -86,22 +95,98 @@ def make_sugang_db(code):
             '''
         #print(name)
         #담당 교수님이 두 분 이상인 강의 검색하는 법: where length(교수)>7(공백, 콤마 포함하여)
+    
     con.commit()
     print(cur.fetchall())
     
-if __name__ == '__main__':
+    
+def dept_for_me():
+    
+    url = 'https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011'
+    sc, fc = get_url_contents(url)
+    parse = BeautifulSoup(fc, 'html.parser')
+    depts = parse.find_all("select", {"name": "openSust"}) 
+    dept = []
+    code = []
 
-    code = get_dept_code()
-    make_sugang_db(code)
+    for t in depts:
+        name = t
+        print(name)
+        code.append(str(t))
+        dept.append(name)
+    
+    return
+
+def delete_more_dept():
+    delete = ["105291", "105321", "126784", "127320", "105541", "105561", "105591", "126905", "126777", "121012", "103391", "122056", "122053", "122054", "122410", "122412", "122058", "122062", "122096", "120806", "120809", "122098", "122099", "126791", "122097", "103013", "102931", "127425", "103851", "103901", "121218", "126790", "126782", "103912", "103911", "126793", "122048", "122102", "122101", "122100", "126792", "122104", "104601", "122103", "104581", "121242", "121243", "121244", "126779", "105441", "105451", "126778", "103741", "126788", "103681", "127109", "126789", "103731", "120933", "127114", "127113", "121134", "121136", "126785", "103271", "126902", "122216", "003221", "126901", "127117", "127117", "122227", "126904", "121263", "122405", "122080", "122409", "126799", "122407", "122408", "105251", "103751", "105611", "127116", "122071"]
+    #delete = ["003221", "126901", "127117", "122227", "126904", "121263", "122405", "122080", "122409", "126799", "122407", "122408", "105251", "103751", "105611", "127116", "122071"]
+    con = sqlite3.connect('./iku.sqlite')
+    for d in delete:
+        cur = con.cursor()
+        cur.execute('DELETE FROM dept WHERE d_code = "{}";'.format(d))
+        cur.execute('DELETE FROM lecture WHERE d_code = "{}";'.format(d))
+    con.commit()
+    
+def updata_lecture_data():
+    department = "126916"
+    lectures = ["0629", "0630"]
+    
+    
+    con = sqlite3.connect('./iku.sqlite')
+    for l in lectures:
+        sql = 'update lecture set d_code = "{}" where l_number = "{}";'.format(department, l)
+        print(sql)
+
+    con.commit()
+    cur = con.cursor()
+    cur.execute(sql)
+    cur.execute('SELECT * FROM lecture where l_number = "{}";'.format(lectures[-1]))
+    print(cur.fetchall())    
+        
+def insert_lecture(dept):
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
-    cur.execute('SELECT * FROM lecture where d_code = 127428')
-    print(cur.fetchone())
-    print(cur.fetchone())
-    print(cur.fetchone())
-    print(cur.fetchone())
-    print(cur.fetchone())
-    print(cur.fetchone())
-    print(cur.fetchone())
-    print(cur.fetchone())
-    print(cur.fetchone())
+    url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011&openSust="
+    sc, fc = get_url_contents(url+dept)
+    parse = BeautifulSoup(fc, 'html.parser')
+    datas = parse.find_all("tr", {"class": "table_bg_white"})
+    data = []
+    print(dept)
+    time.sleep(2)
+    for t in datas[1:]:
+        data = t.text.split('\n')
+        k_lecture = data[5].split('(')
+        data[5] = k_lecture[0]
+        _prof = data[11].split(',')
+        data[11] = _prof[0]
+        cur = con.cursor()
+        cur.execute("INSERT INTO lecture VALUES(:type, :l_number, :l_name, :credit, :d_code, :time, :prof);", {"type":data[3], "l_number":data[4], "l_name":data[5], "credit":data[7], "d_code":dept , "time":data[10], "prof":data[11]})
+        '''
+        print(data[3]) #이수구분
+        print(data[4]) #과목번호
+        print(data[5]) #강의명
+        print(data[7]) #학점
+        print(data[9]) #수강학과 #이거 말고 code 안의 과목번호를 넣자
+        print(data[10]) #시간, 장소
+        print(data[11]) #담당교수
+        '''
+    con.commit()
+    print(cur.fetchall())
+if __name__ == '__main__':
+
+    
+    #code = get_dept_code()
+    #make_sugang_db(code)
+    #dept_for_me()
+    #delete_more_dept()
+    updata_lecture_data()
+    #dept = "105271"
+    #insert_lecture(dept)
+    '''
+    con = sqlite3.connect('./iku.sqlite')
+    cur = con.cursor()
+    cur.execute('SELECT * FROM lecture WHERE d_code = "105271";')
+    for i in range(100):
+        print(cur.fetchone())
+    '''
+
