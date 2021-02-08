@@ -64,7 +64,7 @@ def make_major_db(code):
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
     cur.execute("DROP TABLE major;")
-    cur.execute("CREATE TABLE major(type text, l_number text, l_name text, credit integer, d_code text, time text, prof text, untact text, note text);")
+    cur.execute("CREATE TABLE major(type text, l_number text, l_name text, credit integer, d_code text, time text, prof text, untact text, note text, section text);")
     url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011"
     for c in code:
         dept = "&openSust="+c
@@ -83,7 +83,7 @@ def make_major_db(code):
             _prof = data[11].split(',')
             data[11] = _prof[0]
             cur = con.cursor()
-            cur.execute("INSERT INTO major VALUES(:type, :l_number, :l_name, :credit, :d_code, :time, :prof, :untact, :note);", {"type":data[3], "l_number":data[4], "l_name":data[5], "credit":data[7], "d_code":c , "time":data[10], "prof":data[11], "untact":data[17], "note":data[22]})
+            cur.execute("INSERT INTO major VALUES(:type, :l_number, :l_name, :credit, :d_code, :time, :prof, :untact, :note, :section);", {"type":data[3], "l_number":data[4], "l_name":data[5], "credit":data[7], "d_code":c , "time":data[10], "prof":data[11], "untact":data[17], "note":data[22], "section":data[20]})
             '''
             print(data[3]) #이수구분
             print(data[4]) #과목번호
@@ -106,11 +106,10 @@ def make_curtural_db():
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
     cur.execute("DROP TABLE cultural;")
-    cur.execute("CREATE TABLE cultural(type text, l_number text, l_name text, credit integer, p_code text, time text, prof text, untact text, section text, note text);")
+    cur.execute("CREATE TABLE cultural(type text, l_number text, l_name text, credit integer, d_code text, time text, prof text, untact text, note text, section text);")
     url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011&pobtDiv="
-    code = ["B0404P", "&B04054"]
+    code = ["B0404P", "B04054"]
     for c in code:
-        
         sc, fc = get_url_contents(url+c)
         parse = BeautifulSoup(fc, 'html.parser')
         datas = parse.find_all("tr", {"class": "table_bg_white"})
@@ -125,7 +124,7 @@ def make_curtural_db():
             _prof = data[11].split(',')
             data[11] = _prof[0]
             cur = con.cursor()
-            cur.execute("INSERT INTO cultural VALUES(:type, :l_number, :l_name, :credit, :p_code, :time, :prof, :untact, :section, :note);", {"type":data[3], "l_number":data[4], "l_name":data[5], "credit":data[7], "p_code":c , "time":data[10], "prof":data[11], "untact":data[17], "section":data[20], "note":data[22]})
+            cur.execute("INSERT INTO cultural VALUES(:type, :l_number, :l_name, :credit, :d_code, :time, :prof, :untact, :note, :section);", {"type":data[3], "l_number":data[4], "l_name":data[5], "credit":data[7], "d_code":c , "time":data[10], "prof":data[11], "untact":data[17], "note":data[22], "section":data[20]})
             '''
             print(data[3]) #이수구분
             print(data[4]) #과목번호
@@ -136,8 +135,8 @@ def make_curtural_db():
             print(data[11]) #담당교수
             '''
             print(data[17]) #녹화:실시간:대면
-            print(data[20]) #section, 영역
             print(data[22]) #note
+            print(data[20]) #section, 영역
 
         #print(name)
         #담당 교수님이 두 분 이상인 강의 검색하는 법: where length(교수)>7(공백, 콤마 포함하여)
@@ -189,7 +188,7 @@ def insert_lecture(dept):
         _prof = data[11].split(',')
         data[11] = _prof[0]
         cur = con.cursor()
-        cur.execute("INSERT INTO major VALUES(:type, :l_number, :l_name, :credit, :d_code, :time, :prof, :untact, :note);", {"type":data[3], "l_number":data[4], "l_name":data[5], "credit":data[7], "d_code":dept , "time":data[10], "prof":data[11], "untact":data[17], "note":data[22]})
+        cur.execute("INSERT INTO major VALUES(:type, :l_number, :l_name, :credit, :d_code, :time, :prof, :untact, :note);", {"type":data[3], "l_number":data[4], "l_name":data[5], "credit":data[7], "d_code":dept , "time":data[10], "prof":data[11], "untact":data[17], "note":data[22], "section":data[20]})
         '''
         print(data[3]) #이수구분
         print(data[4]) #과목번호
@@ -204,22 +203,24 @@ def insert_lecture(dept):
 def update_lecture_data():
     con = sqlite3.connect('./iku.sqlite')
     f = open('items_to_change.txt', 'r')
-    lines = f.readlines()
-    for line in lines:
+    line = f.readline()
+    while True:
         items = line.split(" ")
         dept = items[0]
         del items[0]
         for i in items:
+            print(i)
             sql = 'update major set d_code = "{}" where l_number = "{}";'.format(dept, i)
             cur = con.cursor()
             cur.execute(sql)
             print(sql)
+        line = f.readline()
+        if not line: break
+    con.commit()
     f.close()
             
-
-if __name__ == '__main__':
-
     
+if __name__ == '__main__':
     #code = get_dept_code()
     #make_major_db(code)
     #make_curtural_db()
@@ -230,9 +231,11 @@ if __name__ == '__main__':
 
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
-    cur.execute('SELECT * FROM major WHERE d_code = "105271";')
-    #cur.execute('SELECT * FROM dept WHERE l_number = "127307";')
+    cur.execute('SELECT * FROM major WHERE d_code = "126913";')
+    #cur.execute('alter table major add section text;');
+    #cur.execute('SELECT * FROM cultural;')
+    print(cur.fetchone())
 
-    for i in range(20):
+    for i in range(100):
         print(cur.fetchone())
 
