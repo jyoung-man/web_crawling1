@@ -216,25 +216,32 @@ def update_lecture_data():
             print(sql)
         line = f.readline()
         if not line: break
+    college = ["105271", "126897", "102761", "104951", "127119", "122045", "105121", "105061"]
+    cur.execute('update major set d_code = "105091" where d_code = "105061";')
+    cur.execute('update dept set d_name = "건축대학 건축학부" where d_code = "121135";')
+    for c in college:
+        cur.execute('DELETE FROM dept WHERE d_code = {};'.format(c))
     con.commit()
     f.close()
-            
-    
-if __name__ == '__main__':
-    #code = get_dept_code()
-    #make_major_db(code)
-    #make_curtural_db()
-    #dept_for_me()
-    #delete_more_dept()
-    #update_lecture_data()
-    #dept = "105271"
 
+    
+def refresh_db():
+    code = get_dept_code()
+    make_major_db(code)
+    make_curtural_db() 
+    update_lecture_data()
+
+if __name__ == '__main__':
+    #dept_for_me()
+    #dept = "105271"
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
-    cur.execute('SELECT * FROM major WHERE d_code = "126913";')
-    #cur.execute('alter table major add section text;');
+    cur.execute('update dept set d_name = "건축대학 건축학부" where d_code = "121135";')
+    con.commit()
+    cur.execute('SELECT * FROM dept;')
+    #cur.execute('select * from major where d_code = "105061";');
     #cur.execute('SELECT * FROM cultural;')
-    print(cur.fetchone())
+    #print(cur.fetchall())
 
     for i in range(100):
         print(cur.fetchone())
