@@ -333,7 +333,10 @@ if __name__ == '__main__':
     #dept = "105271"
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
-    cur.execute('select * from lecture where prof = "SANGILIYANDI";')
+    #cur.execute('select * from lecture natural join lec_info where l_number = "3206";')
+    cur.execute('select * from lecture where prof in (select prof from lecture where prof = "김석");')
+    #cur.execute('select prof from professor where prof in (select prof from professor group by prof having count(prof)>1);')
+    #cur.execute('select * from professor where prof = "김석";')
     print(cur.fetchall())
     '''
     cur.execute('select * from professor;')
