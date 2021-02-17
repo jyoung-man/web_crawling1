@@ -416,8 +416,10 @@ if __name__ == '__main__':
     #cur.execute('select * from lecture natural join lec_info where l_number = "3206";')
     #cur.execute('select * from lecture where prof in (select prof from lecture where prof = "김석");')
     #cur.execute('select prof from professor where prof in (select prof from professor group by prof having count(prof)>1);')
-    cur.execute('select * from professor where prof = "송정현";')
-    
+    #cur.execute('select * from professor where prof = "Kelly";')
+    #cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
+    con.commit
+    cur.execute('select * from lecture where prof = "켈리";')
     print(cur.fetchall())
     '''
     cur.execute('select * from professor;')
