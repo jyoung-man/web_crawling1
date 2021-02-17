@@ -9,6 +9,7 @@ Created on Sat Jan 30 23:04:22 2021
 
 import requests
 import sqlite3
+from requests_file import FileAdapter
 import re
 import time
 from bs4 import BeautifulSoup  #refecence: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
@@ -17,7 +18,11 @@ def get_url_contents(url):
     s = None
     try:
         s = requests.Session()
-        resp = s.get(url)
+        if url.lower().startswith('file://'):
+            s.mount('file://', FileAdapter())
+            resp = s.get(url)
+        else:
+            resp = s.get(url)        
         return resp.status_code, resp.text
     finally:
         if s is not None:
@@ -287,6 +292,76 @@ def insert_prof_data(url):
         print(data[7]) #이메일       
     con.commit()
 
+def physics_prof_data(url):
+    con = sqlite3.connect('./iku.sqlite')
+    cur = con.cursor()
+    sc, fc = get_url_contents(url)
+    parse = BeautifulSoup(fc, 'html.parser')
+    datas = parse.find_all("tr")
+    data = []
+    for d in datas[1:]:
+        data = d.text.split("\n")
+        cur.execute('INSERT INTO professor VALUES(:prof, :lab, :contact);', {"prof":data[2], "lab":data[5], "contact":data[7]})
+        #print(data[2]) #교수님 성함
+        #print(data[5]) #연구실
+        #print(data[7]) #이메일       
+    con.commit()
+    
+def sanghuh_prof_data(url):
+    con = sqlite3.connect('./iku.sqlite')
+    cur = con.cursor()
+    sc, fc = get_url_contents(url)
+    parse = BeautifulSoup(fc, 'html.parser')
+    datas = parse.find_all("dd")
+    data = []
+    professor = []
+    i = 0
+    for d in range(len(datas)):
+        data = datas[d].text.split("\n")
+        value = data[0].split(" : ")
+        if len(value) > 1 and (d%8 == 0 or d%8 == 3 or d%8 == 5):
+            professor.append(value[1])
+            
+            #print(value[1])
+        
+    #print(professor)
+    count = len(professor)
+    for i in range(int(count/3)):
+        j = 3*i
+        name = professor[j].split(" ( ")
+        cur.execute('INSERT INTO professor VALUES(:prof, :lab, :contact);', {"prof":name[0], "lab":professor[j+1], "contact":professor[j+2]})
+        #print(name[0]) #교수님 성함
+        #print(professor[j+1]) #연구실
+        #print(professor[j+2]) #이메일
+    con.commit()
+    
+def realestate_prof_data(url):
+    con = sqlite3.connect('./iku.sqlite')
+    cur = con.cursor()
+    sc, fc = get_url_contents(url)
+    parse = BeautifulSoup(fc, 'html.parser')
+    datas = parse.find_all("div", {"class": "con"})
+    data = []
+    for d in datas[1:]:
+        data = d.text.replace("\t", "").replace("\r","").split("\n")
+        lab = data[14].split(" : ")
+        mail = data[13].split(" : ")
+        #print(data)
+        cur.execute('INSERT INTO professor VALUES(:prof, :lab, :contact);', {"prof":data[4], "lab":lab[1], "contact":mail[1]})
+        #print(data[4]) #교수님 성함
+        #print(lab[1]) #연구실
+        #print(mail[1]) #이메일       
+    con.commit()
+    
+def get_more_prof_db():
+    url = 'file:///C:/DB/web_crawling1/dept/'
+    dept = ['anis', 'anis2', 'biology', 'biology2', 'biology3', 'cropscience', 'ehs', 'fla', 'fla2', 'foodbio', 'foodbio2', 'kufsm']
+    for d in dept:
+        target = url + d + '.html'
+        sanghuh_prof_data(target)
+    physics_prof_data(url + 'physics.html')
+    realestate_prof_data(url + 'realestate.html')
+    
 def calculate_time(info):
     info = info.replace(" ", "")
     days = info.split(",")
@@ -327,16 +402,22 @@ def refresh_db():
     make_lecture_db(code)
     update_lecture_data()
     get_prof_database()
-    
+    get_more_prof_db()
+
 if __name__ == '__main__':
     #dept_for_me()
     #dept = "105271"
+    #refresh_db()
+    #physics_prof_data("https://www.konkuk.ac.kr/jsp/Coll/coll_01_02_01_02_tab01.jsp")
+    #sanghuh_prof_data('file:///C:/DB/web_crawling1/ehs.html')    
+    
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
     #cur.execute('select * from lecture natural join lec_info where l_number = "3206";')
-    cur.execute('select * from lecture where prof in (select prof from lecture where prof = "김석");')
+    #cur.execute('select * from lecture where prof in (select prof from lecture where prof = "김석");')
     #cur.execute('select prof from professor where prof in (select prof from professor group by prof having count(prof)>1);')
-    #cur.execute('select * from professor where prof = "김석";')
+    cur.execute('select * from professor where prof = "송정현";')
+    
     print(cur.fetchall())
     '''
     cur.execute('select * from professor;')
