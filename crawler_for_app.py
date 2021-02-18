@@ -33,6 +33,7 @@ def get_dept_code():
     cur = con.cursor()
     cur.execute("DROP TABLE dept;")
     cur.execute("CREATE TABLE dept(d_name text, d_code text);")
+    teaching()
     url = 'https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011'
     sc, fc = get_url_contents(url)
     parse = BeautifulSoup(fc, 'html.parser')
@@ -420,21 +421,27 @@ if __name__ == '__main__':
     #physics_prof_data("https://www.konkuk.ac.kr/jsp/Coll/coll_01_02_01_02_tab01.jsp")
     #sanghuh_prof_data('file:///C:/DB/web_crawling1/ehs.html')    
     #teaching()
-    
+    url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011&openSust="
+    c = "127307"
+    #insert_into_db(url, c)
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
+    cur.execute('select * from lecture where l_name = "기업영어1";')
+    print(cur.fetchone())
+    #cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
+    #con.commit()
     '''
     #cur.execute('select * from lecture natural join lec_info where l_number = "3206";')
     #cur.execute('select * from lecture where prof in (select prof from lecture where prof = "김석");')
     #cur.execute('select prof from professor where prof in (select prof from professor group by prof having count(prof)>1);')
     #cur.execute('select * from professor where prof = "Kelly";')
-    #cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
     con.commit
     cur.execute('select * from lecture where prof = "켈리";')
     print(cur.fetchall())
     '''
-    cur.execute('select * from dept;')
-    for i in range(100):
+
+    cur.execute('select * from lecture where d_code = 121247;')
+    for i in range(10):
         print(cur.fetchone())
     
     #cur.execute('update dept set d_name = "건축대학 건축학부" where d_code = "121135";')
