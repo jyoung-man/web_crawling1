@@ -108,7 +108,7 @@ def make_lecture_db(code):
         url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011&openSust="
         insert_into_db(url, c)
         
-    type_code = ["B0404P", "B04054"]
+    type_code = ["B0404P", "B04054", "B04047"]
     for t in type_code:
         url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011&pobtDiv="
         insert_into_db(url, t)
@@ -396,6 +396,15 @@ def calculate_time(info):
     #print(when)
     return when, where
     
+def teaching():
+    t = "B04047"
+    name = "교직"
+    url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011&pobtDiv="
+    insert_into_db(url, t)
+    con = sqlite3.connect('./iku.sqlite')
+    cur = con.cursor()
+    cur.execute('INSERT INTO dept VALUES(:d_name, :d_code);', {"d_name":name, "d_code":t})
+    con.commit()
     
 def refresh_db():
     code = get_dept_code()
@@ -410,9 +419,11 @@ if __name__ == '__main__':
     #refresh_db()
     #physics_prof_data("https://www.konkuk.ac.kr/jsp/Coll/coll_01_02_01_02_tab01.jsp")
     #sanghuh_prof_data('file:///C:/DB/web_crawling1/ehs.html')    
+    #teaching()
     
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
+    '''
     #cur.execute('select * from lecture natural join lec_info where l_number = "3206";')
     #cur.execute('select * from lecture where prof in (select prof from lecture where prof = "김석");')
     #cur.execute('select prof from professor where prof in (select prof from professor group by prof having count(prof)>1);')
@@ -422,10 +433,10 @@ if __name__ == '__main__':
     cur.execute('select * from lecture where prof = "켈리";')
     print(cur.fetchall())
     '''
-    cur.execute('select * from professor;')
-    for i in range(600):
+    cur.execute('select * from dept;')
+    for i in range(100):
         print(cur.fetchone())
-    '''
+    
     #cur.execute('update dept set d_name = "건축대학 건축학부" where d_code = "121135";')
     #con.commit()
     #refresh_db()
