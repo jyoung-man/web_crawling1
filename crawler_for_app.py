@@ -426,9 +426,10 @@ if __name__ == '__main__':
     #insert_into_db(url, c)
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
-    cur.execute('delete from dept where d_code = "B04047";')
+    #cur.execute('update dept set d_name = replace(d_name, "KU융합과학기술원", "KIT");')
+    cur.execute('delete from dept where d_code = "127363";')
     con.commit()
-    print(cur.fetchone())
+    #print(cur.fetchone())
     #cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
     #con.commit()
     '''
