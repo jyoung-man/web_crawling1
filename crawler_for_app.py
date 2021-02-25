@@ -33,7 +33,6 @@ def get_dept_code():
     cur = con.cursor()
     cur.execute("DROP TABLE dept;")
     cur.execute("CREATE TABLE dept(d_name text, d_code text);")
-    teaching()
     url = 'https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011'
     sc, fc = get_url_contents(url)
     parse = BeautifulSoup(fc, 'html.parser')
@@ -426,8 +425,8 @@ if __name__ == '__main__':
     #insert_into_db(url, c)
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
-    #cur.execute('update dept set d_name = replace(d_name, "KU융합과학기술원", "KIT");')
-    cur.execute('delete from dept where d_code = "127363";')
+    cur.execute('update dept set d_name = replace(d_name, "KU융합과학기술원", "KIT");')
+    cur.execute('delete from dept where d_code = "B040zzz";')
     con.commit()
     #print(cur.fetchone())
     #cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
@@ -442,7 +441,7 @@ if __name__ == '__main__':
     print(cur.fetchall())
     '''
 
-    cur.execute('select * from dept;')
+    cur.execute('select * from lecture where d_code = "B04047";')
     for i in range(100):
         print(cur.fetchone())
     
