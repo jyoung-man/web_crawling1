@@ -73,7 +73,7 @@ def insert_into_db(url, c):
         return #NULL POINT EXCEPTION 방지. 정보가 안 나오는 강의는 조회 안하도록
     data = []
     print(c)
-    time.sleep(2) #트래픽 한 번에 너무 많이 몰리지 않게
+    time.sleep(1) #트래픽 한 번에 너무 많이 몰리지 않게
     for t in datas[1:]:
         data = t.text.split('\n')
         k_lecture = data[5].split('(')
@@ -147,9 +147,11 @@ def update_lecture_data():
         items = line.split(" ")
         dept = items[0]
         del items[0]
-        for i in items:
+        for i in items[:-1]:
             print(i)
-            sql = 'update lecture set d_code = "{}" where l_number = "{}";'.format(dept, i)
+            sql = 'INSERT INTO lecture (type, l_number, l_name, d_code, prof, section) SELECT type, l_number, l_name, "{}", prof, section FROM lecture WHERE l_number = "{}" LIMIT 1;'.format(dept, i)
+
+           # sql = 'update lecture set d_code = "{}" where l_number = "{}";'.format(dept, i)
             cur = con.cursor()
             cur.execute(sql)
             print(sql)
@@ -287,9 +289,9 @@ def insert_prof_data(url):
     for d in datas[1:]:
         data = d.text.split("\n")
         cur.execute('INSERT INTO professor VALUES(:prof, :lab, :contact);', {"prof":data[2], "lab":data[5], "contact":data[7]})
-        print(data[2]) #교수님 성함
-        print(data[5]) #연구실
-        print(data[7]) #이메일       
+        #print(data[2]) #교수님 성함
+        #print(data[5]) #연구실
+        #print(data[7]) #이메일       
     con.commit()
 
 def physics_prof_data(url):
@@ -426,7 +428,7 @@ if __name__ == '__main__':
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
     cur.execute('update dept set d_name = replace(d_name, "KU융합과학기술원", "KIT");')
-    cur.execute('delete from dept where d_code = "B040zzz";')
+    cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
     con.commit()
     #print(cur.fetchone())
     #cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
@@ -441,8 +443,10 @@ if __name__ == '__main__':
     print(cur.fetchall())
     '''
 
-    cur.execute('select * from lecture where d_code = "B04047";')
-    for i in range(100):
+    #cur.execute('select * from lecture where d_code =  "127123";')
+    cur.execute('select * from lec_info where l_number =  "3208";')
+
+    for i in range(200):
         print(cur.fetchone())
     
     #cur.execute('update dept set d_name = "건축대학 건축학부" where d_code = "121135";')
