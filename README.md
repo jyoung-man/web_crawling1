@@ -7,6 +7,6 @@
 
 3. 강의시간표 크롤링, 강의 정보 DB 테이블 생성(이수구분, 과목번호, 강의명, 학점, 수강학과, 시간 및 장소, 담당교수
 
-Html files are in the folder 1990~2020
+Html files are in the folder 1990~2020 and dept
 
 The web crawling code is in the crawler.py and crawler_for_app.py
