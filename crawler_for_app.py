@@ -33,7 +33,7 @@ def get_dept_code():
     cur = con.cursor()
     cur.execute("DROP TABLE dept;")
     cur.execute("CREATE TABLE dept(d_name text, d_code text);")
-    url = 'https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011'
+    url = 'https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01012'
     sc, fc = get_url_contents(url)
     parse = BeautifulSoup(fc, 'html.parser')
     depts = parse.find_all("select", {"name": "openSust"}) 
@@ -105,17 +105,17 @@ def make_lecture_db(code):
     cur.execute("DROP TABLE lec_info;")
     cur.execute("CREATE TABLE lec_info(l_number text, credit integer, time text, classroom text, untact text, note text);")
     for c in code:
-        url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011&openSust="
+        url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01012&openSust="
         insert_into_db(url, c)
         
     type_code = ["B0404P", "B04054", "B04047"]
     for t in type_code:
-        url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011&pobtDiv="
+        url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01012&pobtDiv="
         insert_into_db(url, t)
     con.commit()
     
-def show_dept_for_me():
-    url = 'https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011'
+def show_dept_for_me():  #융합치유전공  추가해줘
+    url = 'https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01012'
     sc, fc = get_url_contents(url)
     parse = BeautifulSoup(fc, 'html.parser')
     depts = parse.find_all("select", {"name": "openSust"}) 
@@ -129,14 +129,11 @@ def show_dept_for_me():
     return
 
 def delete_more_dept():
-    #delete = ["105291", "105321", "126784", "127320", "105541", "105561", "105591", "126905", "126777", "121012", "103391", "122056", "122053", "122054", "122410", "122412", "122058", "122062", "122096", "120806", "120809", "122098", "122099", "126791", "122097", "103013", "102931", "127425", "103851", "103901", "121218", "126790", "126782", "103912", "103911", "126793", "122048", "122102", "122101", "122100", "126792", "122104", "104601", "122103", "104581", "121242", "121243", "121244", "126779", "105441", "105451", "126778", "103741", "126788", "103681", "127109", "126789", "103731", "120933", "127114", "127113", "121134", "121136", "126785", "103271", "126902", "122216", "003221", "126901", "127117", "127117", "122227", "126904", "121263", "122405", "122080", "122409", "126799", "122407", "122408", "105251", "103751", "105611", "127116", "122071"]
-    #delete = ["003221", "126901", "127117", "122227", "126904", "121263", "122405", "122080", "122409", "126799", "122407", "122408", "105251", "103751", "105611", "127116", "122071"]
-    delete = ["127307"]
+    delete = ["105291", "105321", "126784", "127320", "105541", "105561", "105591", "126905", "126777", "121012", "103391", "122056", "122053", "122054", "122410", "122412", "122058", "122062", "122096", "120806", "120809", "122098", "122099", "126791", "122097", "103013", "102931", "127425", "103851", "103901", "121218", "126790", "126782", "103912", "103911", "126793", "122048", "122102", "122101", "122100", "126792", "122104", "104601", "122103", "104581", "121242", "121243", "121244", "126779", "105441", "105451", "126778", "103741", "126788", "103681", "127109", "126789", "103731", "120933", "127114", "127113", "121134", "121136", "126785", "103271", "126902", "122216", "003221", "126901", "127117", "127117", "122227", "126904", "121263", "122405", "122080", "122409", "126799", "122407", "122408", "105251", "103751", "105611", "127116", "122071"]
     con = sqlite3.connect('./iku.sqlite')
     for d in delete:
         cur = con.cursor()
         cur.execute('DELETE FROM dept WHERE d_code = "{}";'.format(d))
-        #cur.execute('DELETE FROM lecture WHERE d_code = "{}";'.format(d))
     con.commit()
     
 def update_lecture_data():
@@ -401,7 +398,7 @@ def calculate_time(info):
 def teaching():
     t = "B04047"
     name = "교직"
-    url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011&pobtDiv="
+    url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01012&pobtDiv="
     insert_into_db(url, t)
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
@@ -411,28 +408,21 @@ def teaching():
 def refresh_db():
     code = get_dept_code()
     make_lecture_db(code)
+    teaching()
     update_lecture_data()
     get_prof_database()
     get_more_prof_db()
-
+    
 if __name__ == '__main__':
-    #dept_for_me()
-    #dept = "105271"
-    #refresh_db()
-    #physics_prof_data("https://www.konkuk.ac.kr/jsp/Coll/coll_01_02_01_02_tab01.jsp")
-    #sanghuh_prof_data('file:///C:/DB/web_crawling1/ehs.html')    
-    #teaching()
-    #url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01011&openSust="
-    #c = "127307"
-    #insert_into_db(url, c)
+    show_dept_for_me()
+    refresh_db()
+
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
     cur.execute('update dept set d_name = replace(d_name, "KU융합과학기술원", "KIT");')
     cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
     con.commit()
-    #print(cur.fetchone())
-    #cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
-    #con.commit()
+
     '''
     #cur.execute('select * from lecture natural join lec_info where l_number = "3206";')
     #cur.execute('select * from lecture where prof in (select prof from lecture where prof = "김석");')
@@ -448,9 +438,3 @@ if __name__ == '__main__':
 
     for i in range(200):
         print(cur.fetchone())
-    
-    #cur.execute('update dept set d_name = "건축대학 건축학부" where d_code = "121135";')
-    #con.commit()
-    #refresh_db()
-    #get_prof_database()
-
