@@ -103,7 +103,7 @@ def make_lecture_db(code):
     cur.execute("DROP TABLE lecture;")
     cur.execute("CREATE TABLE lecture(type text, l_number text, l_name text, d_code text, prof text, section text);")
     cur.execute("DROP TABLE lec_info;")
-    cur.execute("CREATE TABLE lec_info(l_number text, credit integer, time text, classroom text, untact text, note text);")
+    cur.execute("CREATE TABLE lec_info(l_number text, credit integer, time text, classroom text, untact text, note text, first double, second double, third double, fourth double);")
     for c in code:
         url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/time/SeoulTimetableInfo.jsp?ltYy=2021&ltShtm=B01012&openSust="
         insert_into_db(url, c)
