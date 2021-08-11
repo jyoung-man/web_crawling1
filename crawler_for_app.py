@@ -83,7 +83,7 @@ def insert_into_db(url, c):
         data[11] = _prof[0].strip()
         cur = con.cursor()
         cur.execute("INSERT INTO lecture VALUES(:type, :l_number, :l_name, :d_code, :prof, :section);", {"type":data[3], "l_number":data[4], "l_name":data[5], "d_code":c , "prof":data[11], "section":data[20]})
-        cur.execute("REPLACE INTO lec_info VALUES(:l_number, :credit, :time, :classroom, :untact, :note);", {"l_number":data[4], "credit":data[7], "time":when, "classroom":where, "untact":data[17], "note":data[22]})
+        cur.execute("REPLACE INTO lec_info(:l_number, :credit, :time, :classroom, :untact, :note) VALUES(:l_number, :credit, :time, :classroom, :untact, :note);", {"l_number":data[4], "credit":data[7], "time":when, "classroom":where, "untact":data[17], "note":data[22]})
         '''
         print(data[3]) #이수구분
         print(data[4]) #과목번호
