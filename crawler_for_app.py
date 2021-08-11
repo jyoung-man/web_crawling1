@@ -353,7 +353,7 @@ def realestate_prof_data(url):
     con.commit()
     
 def get_more_prof_db():
-    url = 'file:///C:/DB/web_crawling1/dept/'
+    url = 'file:///content/web_crawling1/dept/'
     dept = ['anis', 'anis2', 'biology', 'biology2', 'biology3', 'cropscience', 'ehs', 'fla', 'fla2', 'foodbio', 'foodbio2', 'kufsm']
     for d in dept:
         target = url + d + '.html'
