@@ -72,6 +72,7 @@ def insert_into_db(url, c):
     if len(datas) < 10: 
         return #NULL POINT EXCEPTION 방지. 정보가 안 나오는 강의는 조회 안하도록
     data = []
+    park = []
     print(c)
     time.sleep(1) #트래픽 한 번에 너무 많이 몰리지 않게
     for t in datas[1:]:
@@ -81,9 +82,10 @@ def insert_into_db(url, c):
         when, where = calculate_time(data[10].strip())
         _prof = data[11].split(',')
         data[11] = _prof[0].strip()
+        park = get_ratio_data(data[4])
         cur = con.cursor()
         cur.execute("INSERT INTO lecture VALUES(:type, :l_number, :l_name, :d_code, :prof, :section);", {"type":data[3], "l_number":data[4], "l_name":data[5], "d_code":c , "prof":data[11], "section":data[20]})
-        cur.execute("REPLACE INTO lec_info(:l_number, :credit, :time, :classroom, :untact, :note) VALUES(:l_number, :credit, :time, :classroom, :untact, :note);", {"l_number":data[4], "credit":data[7], "time":when, "classroom":where, "untact":data[17], "note":data[22]})
+        cur.execute("REPLACE INTO lec_info VALUES(:l_number, :credit, :time, :classroom, :untact, :note, :first, :second, :third, :fourth);", {"l_number":data[4], "credit":data[7], "time":when, "classroom":where, "untact":data[17], "note":data[22], "first":park[0], "second":park[1], "third":park[2], "fourth":park[3]})
         '''
         print(data[3]) #이수구분
         print(data[4]) #과목번호
@@ -361,6 +363,25 @@ def get_more_prof_db():
     physics_prof_data(url + 'physics.html')
     realestate_prof_data(url + 'realestate.html')
     
+def get_ratio_data(code):
+    park = []
+    
+    for i in range(1, 5):
+        url = "https://kupis.konkuk.ac.kr/sugang/acd/cour/aply/CourBasketInwonInq.jsp?ltYy=2021&ltShtm=B01012&sbjtId={}&promShyr={}&fg=B".format(code, str(i))
+        sc, fc = get_url_contents(url)
+        parse = BeautifulSoup(fc, 'html.parser')
+        students = parse.find_all("td",{"align": "center"})
+        temp = str(students[0])
+        temp = temp.split(" / ")
+        value = temp[1].split("<")
+        if len(value[0]) > 0:
+            flo = float(value[0])
+            park.append(flo)
+        else:
+            park.append(1)
+    return park
+
+
 def calculate_time(info):
     info = info.replace(" ", "")
     days = info.split(",")
