@@ -371,16 +371,18 @@ def get_ratio_data(code):
         sc, fc = get_url_contents(url)
         parse = BeautifulSoup(fc, 'html.parser')
         students = parse.find_all("td",{"align": "center"})
-        temp = str(students[0])
-        temp = temp.split(" / ")
-        value = temp[1].split("<")
-        if len(value[0]) > 0:
-            flo = float(value[0])
-            park.append(flo)
+        if students:
+          temp = str(students[0])
+          temp = temp.split(" / ")
+          value = temp[1].split("<")
+          if len(value[0]) > 0:
+              flo = float(value[0])
+              park.append(flo)
+          else:
+              park.append(1)
         else:
-            park.append(1)
+          park.append(1)
     return park
-
 
 def calculate_time(info):
     info = info.replace(" ", "")
