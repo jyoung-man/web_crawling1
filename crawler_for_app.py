@@ -442,7 +442,7 @@ if __name__ == '__main__':
 
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
-    cur.execute('update dept set d_name = replace(d_name, "KU융합과학기술원", "KIT");')
+    #cur.execute('update dept set d_name = replace(d_name, "KU융합과학기술원", "KIT");')
     cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
     con.commit()
 
