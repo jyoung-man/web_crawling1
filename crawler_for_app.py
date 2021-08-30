@@ -445,7 +445,7 @@ def closed_lectures():
             lec = line.strip().split()
             print(lec[0])
             cur = con.cursor()
-            cur.execute('delete from lecture where d_code = "{}";'.format(lec[0]))
+            cur.execute('delete from lecture where l_number = "{}";'.format(lec[0]))
             con.commit()
 
 if __name__ == '__main__':
@@ -459,10 +459,10 @@ if __name__ == '__main__':
     #cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
     con.commit()
     '''
-    #closed_lectures()
+    closed_lectures()
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
-    cur.execute('select * from lecture where d_code="0820";')
+    cur.execute('select * from lecture where l_number="0820";')
 
     #cur.execute('select * from lecture natural join lec_info where l_number = "3206";')
     #cur.execute('select * from lecture where prof in (select prof from lecture where prof = "김석");')
