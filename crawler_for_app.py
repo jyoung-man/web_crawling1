@@ -83,6 +83,7 @@ def insert_into_db(url, c):
         _prof = data[11].split(',')
         data[11] = _prof[0].strip()
         park = get_ratio_data(data[4])
+        time.sleep(1)
         cur = con.cursor()
         cur.execute("INSERT INTO lecture VALUES(:type, :l_number, :l_name, :d_code, :prof, :section);", {"type":data[3], "l_number":data[4], "l_name":data[5], "d_code":c , "prof":data[11], "section":data[20]})
         cur.execute("REPLACE INTO lec_info VALUES(:l_number, :credit, :time, :classroom, :untact, :note, :first, :second, :third, :fourth);", {"l_number":data[4], "credit":data[7], "time":when, "classroom":where, "untact":data[17], "note":data[22], "first":park[0], "second":park[1], "third":park[2], "fourth":park[3]})
@@ -436,28 +437,37 @@ def refresh_db():
     get_prof_database()
     get_more_prof_db()
     
+def closed_lectures():
+    con = sqlite3.connect('./iku.sqlite')
+    
+    with open('closed_lectures.txt') as file:
+        for line in file.readlines():
+            lec = line.strip().split()
+            print(lec[0])
+            cur = con.cursor()
+            cur.execute('delete from lecture where d_code = "{}";'.format(lec[0]))
+            con.commit()
+
 if __name__ == '__main__':
-    show_dept_for_me()
-    refresh_db()
+    '''
+    #show_dept_for_me()
+    #refresh_db()
 
     con = sqlite3.connect('./iku.sqlite')
     cur = con.cursor()
-    #cur.execute('update dept set d_name = replace(d_name, "KU융합과학기술원", "KIT");')
-    cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
+    
+    #cur.execute('update professor set prof = "켈리" where prof = "Kelly Ashihara";')
     con.commit()
-
     '''
+    #closed_lectures()
+    con = sqlite3.connect('./iku.sqlite')
+    cur = con.cursor()
+    cur.execute('select * from lecture where d_code="0820";')
+
     #cur.execute('select * from lecture natural join lec_info where l_number = "3206";')
     #cur.execute('select * from lecture where prof in (select prof from lecture where prof = "김석");')
     #cur.execute('select prof from professor where prof in (select prof from professor group by prof having count(prof)>1);')
     #cur.execute('select * from professor where prof = "Kelly";')
     con.commit
-    cur.execute('select * from lecture where prof = "켈리";')
     print(cur.fetchall())
-    '''
 
-    #cur.execute('select * from lecture where d_code =  "127123";')
-    cur.execute('select * from lec_info where l_number =  "3208";')
-
-    for i in range(200):
-        print(cur.fetchone())
